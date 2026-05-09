@@ -1,5 +1,6 @@
 const translations = {
   zh: {
+    navAbout: "关于",
     navServices: "服务",
     navClasses: "课程",
     navTarot101: "塔罗101",
@@ -76,6 +77,7 @@ const translations = {
     bookingSubmitted: "预约提示已生成。请添加微信 yoyoran，并发送您的预约项目与问题方向。",
   },
   en: {
+    navAbout: "About",
     navServices: "Services",
     navClasses: "Classes",
     navTarot101: "Tarot 101",

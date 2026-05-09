@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" role="img" aria-labelledby="title desc">
+  <title id="title">AKIRA TAROT profile image</title>
+  <desc id="desc">A warm tarot studio portrait scene with cards, moonlight, and a crystal orb.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#221a20"/>
+      <stop offset="0.52" stop-color="#7a3f52"/>
+      <stop offset="1" stop-color="#bd8f4f"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="26%" r="52%">
+      <stop offset="0" stop-color="#fffaf2" stop-opacity=".42"/>
+      <stop offset=".42" stop-color="#d6b06f" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#111" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="card" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fffaf2"/>
+      <stop offset="1" stop-color="#e5d2b4"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1100" fill="url(#bg)"/>
+  <rect width="900" height="1100" fill="url(#glow)"/>
+  <circle cx="450" cy="250" r="120" fill="#fffaf2" opacity=".18"/>
+  <circle cx="450" cy="250" r="74" fill="none" stroke="#fffaf2" stroke-opacity=".5" stroke-width="3"/>
+  <path d="M450 94v312M294 250h312" stroke="#fffaf2" stroke-opacity=".36" stroke-width="2"/>
+  <g opacity=".28" fill="#fffaf2">
+    <circle cx="170" cy="160" r="7"/>
+    <circle cx="720" cy="210" r="5"/>
+    <circle cx="675" cy="118" r="8"/>
+    <circle cx="255" cy="370" r="4"/>
+    <circle cx="790" cy="360" r="6"/>
+  </g>
+  <g transform="translate(198 456) rotate(-11)">
+    <rect width="190" height="310" rx="18" fill="#211920" stroke="#d7bd85" stroke-width="8"/>
+    <rect x="24" y="28" width="142" height="254" rx="12" fill="none" stroke="#d7bd85" stroke-opacity=".54" stroke-width="3"/>
+    <path d="M95 82l28 66 70 6-53 46 16 69-61-36-61 36 16-69-53-46 70-6z" fill="none" stroke="#d7bd85" stroke-width="5" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(472 444) rotate(9)">
+    <rect width="190" height="310" rx="18" fill="#211920" stroke="#d7bd85" stroke-width="8"/>
+    <rect x="24" y="28" width="142" height="254" rx="12" fill="none" stroke="#d7bd85" stroke-opacity=".54" stroke-width="3"/>
+    <circle cx="95" cy="122" r="44" fill="none" stroke="#d7bd85" stroke-width="5"/>
+    <path d="M58 202h74M76 232h38" stroke="#d7bd85" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(286 606)">
+    <ellipse cx="164" cy="254" rx="220" ry="54" fill="#181418" opacity=".24"/>
+    <circle cx="164" cy="122" r="98" fill="#fffaf2" opacity=".9"/>
+    <path d="M164 40c-62 58-86 121-72 188 20 38 47 58 72 58s52-20 72-58c14-67-10-130-72-188z" fill="#181418" opacity=".12"/>
+    <rect x="60" y="212" width="208" height="144" rx="72" fill="#211920"/>
+    <path d="M82 254c48 42 113 42 164 0" fill="none" stroke="#d7bd85" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="129" cy="126" r="10" fill="#7a3f52"/>
+    <circle cx="199" cy="126" r="10" fill="#7a3f52"/>
+    <path d="M135 172c18 14 40 14 58 0" fill="none" stroke="#7a3f52" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(330 822)">
+    <rect width="240" height="170" rx="18" fill="url(#card)" stroke="#d7bd85" stroke-width="4"/>
+    <path d="M120 34l18 42 45 4-34 30 10 44-39-23-39 23 10-44-34-30 45-4z" fill="none" stroke="#7a3f52" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M58 134h124" stroke="#59786d" stroke-width="5" stroke-linecap="round"/>
+  </g>
+</svg>
