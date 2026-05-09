@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://akiratarot.com/sitemap.xml
