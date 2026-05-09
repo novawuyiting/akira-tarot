@@ -2,6 +2,7 @@ const translations = {
   zh: {
     navServices: "服务",
     navClasses: "课程",
+    navTarot101: "塔罗101",
     navCards: "牌卡",
     navBook: "预约",
     heroEyebrow: "占卜 · 咨询 · 疗愈",
@@ -77,6 +78,7 @@ const translations = {
   en: {
     navServices: "Services",
     navClasses: "Classes",
+    navTarot101: "Tarot 101",
     navCards: "Cards",
     navBook: "Book",
     heroEyebrow: "Tarot · Consultation · Healing",
