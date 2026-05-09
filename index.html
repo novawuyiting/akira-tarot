@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🔮 AKIRA TAROT 🌟 晶晶塔罗</title>
+    <meta
+      name="description"
+      content="AKIRA TAROT 晶晶塔罗 offers tarot readings, consultation, healing, ritual work, and tarot classes by appointment on WeChat."
+    />
+    <link rel="preload" as="image" href="assets/tarot-hero.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="AKIRA TAROT home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        🔮 AKIRA TAROT
+      </a>
+      <div class="header-actions">
+        <nav>
+          <a href="#readings" data-i18n="navServices">Services</a>
+          <a href="#learn" data-i18n="navClasses">Classes</a>
+          <a href="#shop" data-i18n="navCards">Cards</a>
+          <a href="#booking" data-i18n="navBook">Book</a>
+        </nav>
+        <div class="language-toggle" aria-label="Language setting">
+          <button class="language-option active" type="button" data-lang="zh" aria-pressed="true">中文</button>
+          <button class="language-option" type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-label="AKIRA TAROT studio">
+        <img src="assets/tarot-hero.png" alt="Tarot cards arranged on a warm studio table" />
+        <div class="hero-shade"></div>
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="heroEyebrow">占卜 · 咨询 · 疗愈</p>
+          <h1>🔮 AKIRA TAROT <span>🌟 晶晶塔罗</span></h1>
+          <p data-i18n="heroCopy">
+            用心为您“牌”忧解惑，趋利避害，走向更好的未来。
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#booking">
+              <span class="icon calendar" aria-hidden="true"></span>
+              <span data-i18n="heroBook">预约咨询</span>
+            </a>
+            <a class="button secondary" href="#draw">
+              <span class="icon spark" aria-hidden="true"></span>
+              <span data-i18n="heroDraw">抽一张牌</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="quick-strip" aria-label="Studio highlights">
+        <div>
+          <span data-i18n="quickTime">20 / 30 / 60分钟</span>
+          <strong data-i18n="quickReading">占卜咨询</strong>
+        </div>
+        <div>
+          <span data-i18n="quickLevels">初级 / 中级 / 高级</span>
+          <strong data-i18n="quickTeaching">塔罗牌教学</strong>
+        </div>
+        <div>
+          <span data-i18n="quickWechat">微信预约</span>
+          <strong>yoyoran</strong>
+        </div>
+      </section>
+
+      <section id="draw" class="draw-section">
+        <div class="section-intro">
+          <p class="eyebrow" data-i18n="drawEyebrow">Daily card</p>
+          <h2 data-i18n="drawTitle">静心，抽一张今日指引。</h2>
+        </div>
+        <div class="draw-layout">
+          <div class="deck-stage" aria-live="polite">
+            <button class="tarot-card back-card" data-card-index="0" aria-label="Draw first tarot card">
+              <span></span>
+            </button>
+            <button class="tarot-card back-card" data-card-index="1" aria-label="Draw second tarot card">
+              <span></span>
+            </button>
+            <button class="tarot-card back-card" data-card-index="2" aria-label="Draw third tarot card">
+              <span></span>
+            </button>
+          </div>
+          <article class="reading-panel">
+            <p class="panel-label" data-i18n="drawPanelLabel">今日提示</p>
+            <h3 id="cardName">女祭司</h3>
+            <p id="cardMeaning">
+              相信安静的直觉。答案也许先以感受出现，再慢慢变成清晰的方向。
+            </p>
+            <button class="button ghost" id="resetDraw" type="button">
+              <span class="icon refresh" aria-hidden="true"></span>
+              <span data-i18n="drawAgain">再抽一次</span>
+            </button>
+          </article>
+        </div>
+      </section>
+
+      <section id="readings" class="readings-section">
+        <div class="section-intro">
+          <p class="eyebrow" data-i18n="servicesEyebrow">Services</p>
+          <h2 data-i18n="servicesTitle">选择适合您的咨询方式。</h2>
+        </div>
+        <div class="service-grid">
+          <article class="service-card">
+            <p data-i18n="serviceType">占卜 咨询 疗愈</p>
+            <h3 data-i18n="service20Title">20分钟</h3>
+            <span>¥298 / $45</span>
+            <ul>
+              <li data-i18n="service20One">适合单一问题</li>
+              <li data-i18n="service20Two">快速梳理现状</li>
+              <li data-i18n="service20Three">给出行动建议</li>
+            </ul>
+            <a class="button card-button" href="#booking" data-service-key="reading20" data-i18n="bookButton">预约</a>
+          </article>
+          <article class="service-card featured">
+            <p data-i18n="serviceType">占卜 咨询 疗愈</p>
+            <h3 data-i18n="service30Title">30分钟</h3>
+            <span>¥480 / $68</span>
+            <ul>
+              <li data-i18n="service30One">适合感情、事业、选择</li>
+              <li data-i18n="service30Two">深入分析关系与趋势</li>
+              <li data-i18n="service30Three">趋利避害，明确下一步</li>
+            </ul>
+            <a class="button card-button" href="#booking" data-service-key="reading30" data-i18n="bookButton">预约</a>
+          </article>
+          <article class="service-card">
+            <p data-i18n="serviceType">占卜 咨询 疗愈</p>
+            <h3 data-i18n="service60Title">60分钟</h3>
+            <span>¥888 / $120</span>
+            <ul>
+              <li data-i18n="service60One">适合复杂问题</li>
+              <li data-i18n="service60Two">完整牌阵与深度解读</li>
+              <li data-i18n="service60Three">疗愈视角陪伴整合</li>
+            </ul>
+            <a class="button card-button" href="#booking" data-service-key="reading60" data-i18n="bookButton">预约</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="learn" class="learn-section">
+        <div class="section-intro">
+          <p class="eyebrow" data-i18n="classesEyebrow">Tarot classes</p>
+          <h2 data-i18n="classesTitle">塔罗牌教学：初级 / 中级 / 高级班。</h2>
+        </div>
+        <div class="lesson-tabs" role="tablist" aria-label="Tarot class levels">
+          <button class="tab active" type="button" role="tab" aria-selected="true" data-lesson="majors">
+            <span data-i18n="tabBeginner">初级班</span>
+          </button>
+          <button class="tab" type="button" role="tab" aria-selected="false" data-lesson="suits">
+            <span data-i18n="tabIntermediate">中级班</span>
+          </button>
+          <button class="tab" type="button" role="tab" aria-selected="false" data-lesson="spreads">
+            <span data-i18n="tabAdvanced">高级班</span>
+          </button>
+          <button class="tab" type="button" role="tab" aria-selected="false" data-lesson="ethics">
+            <span data-i18n="tabPrivate">私教课</span>
+          </button>
+        </div>
+        <article class="lesson-panel">
+          <div>
+            <p class="panel-label" id="lessonKicker">初级班</p>
+            <h3 id="lessonTitle">认识牌义与基础牌阵</h3>
+            <p id="lessonCopy">
+              从大阿卡那、小阿卡那、元素与牌阵开始，建立稳定、清晰的塔罗基础。
+            </p>
+          </div>
+          <a class="button primary" href="#booking" data-service-key="classBeginner">
+            <span class="icon book" aria-hidden="true"></span>
+            <span data-i18n="classButton">咨询课程</span>
+          </a>
+        </article>
+      </section>
+
+      <section id="shop" class="shop-section">
+        <div class="section-intro">
+          <p class="eyebrow" data-i18n="cardsEyebrow">Tarot cards</p>
+          <h2 data-i18n="cardsTitle">想买塔罗牌？先选适合自己的能量。</h2>
+        </div>
+        <div class="shop-layout">
+          <div class="product-grid">
+            <article class="product-card">
+              <div class="product-art dawn"></div>
+              <p data-i18n="productClassicKicker">Beginner friendly</p>
+              <h3 data-i18n="productClassicTitle">经典入门牌</h3>
+              <span data-i18n="productClassicMeta">适合初学者</span>
+              <button class="button product-button" type="button" data-product-key="classic">
+                <span class="icon bag" aria-hidden="true"></span>
+                <span data-i18n="addChoice">加入选择</span>
+              </button>
+            </article>
+            <article class="product-card">
+              <div class="product-art velvet"></div>
+              <p data-i18n="productHealingKicker">Soft intuitive</p>
+              <h3 data-i18n="productHealingTitle">疗愈系牌卡</h3>
+              <span data-i18n="productHealingMeta">适合日常觉察</span>
+              <button class="button product-button" type="button" data-product-key="healing">
+                <span class="icon bag" aria-hidden="true"></span>
+                <span data-i18n="addChoice">加入选择</span>
+              </button>
+            </article>
+            <article class="product-card">
+              <div class="product-art field"></div>
+              <p data-i18n="productStudyKicker">Reader setup</p>
+              <h3 data-i18n="productStudyTitle">学习套装</h3>
+              <span data-i18n="productStudyMeta">牌卡 + 学习建议</span>
+              <button class="button product-button" type="button" data-product-key="study">
+                <span class="icon bag" aria-hidden="true"></span>
+                <span data-i18n="addChoice">加入选择</span>
+              </button>
+            </article>
+          </div>
+          <aside class="cart-panel" aria-live="polite">
+            <p class="panel-label" data-i18n="cartLabel">您的选择</p>
+            <ul id="cartItems">
+              <li data-i18n="cartEmpty">还没有选择牌卡。</li>
+            </ul>
+            <div class="cart-total">
+              <span data-i18n="bookingMethod">预约方式</span>
+              <strong id="cartTotal">微信</strong>
+            </div>
+            <button class="button primary" type="button" id="checkoutButton">
+              <span class="icon lock" aria-hidden="true"></span>
+              <span data-i18n="requestPurchase">咨询购买</span>
+            </button>
+          </aside>
+        </div>
+      </section>
+
+      <section id="booking" class="booking-section">
+        <div class="booking-copy">
+          <p class="eyebrow" data-i18n="bookingEyebrow">Booking</p>
+          <h2 data-i18n="bookingTitle">预约请加微信 yoyoran。</h2>
+          <p data-i18n="bookingCopy">
+            请说明您想预约的服务、问题方向与方便的时间。AKIRA TAROT 会为您安排咨询。
+          </p>
+        </div>
+        <form class="booking-form">
+          <label>
+            <span data-i18n="nameLabel">姓名</span>
+            <input type="text" name="name" autocomplete="name" placeholder="您的称呼" data-i18n-placeholder="namePlaceholder" required />
+          </label>
+          <label>
+            <span data-i18n="contactLabel">联系方式</span>
+            <input type="text" name="email" autocomplete="email" placeholder="微信 / Email" data-i18n-placeholder="contactPlaceholder" required />
+          </label>
+          <label>
+            <span data-i18n="sessionLabel">预约项目</span>
+            <select name="session" id="sessionSelect">
+            </select>
+          </label>
+          <label>
+            <span data-i18n="focusLabel">问题方向</span>
+            <textarea name="focus" rows="4" placeholder="感情、事业、关系、选择、疗愈、课程或牌卡购买..." data-i18n-placeholder="focusPlaceholder"></textarea>
+          </label>
+          <button class="button primary wide" type="submit">
+            <span class="icon send" aria-hidden="true"></span>
+            <span data-i18n="submitBooking">生成预约提示</span>
+          </button>
+          <p class="form-note" id="formNote" role="status"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>🔮 AKIRA TAROT 🌟 晶晶塔罗</p>
+      <div>
+        <a href="#readings" data-i18n="navServices">Services</a>
+        <a href="#learn" data-i18n="navClasses">Classes</a>
+        <a href="#shop" data-i18n="navCards">Cards</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
