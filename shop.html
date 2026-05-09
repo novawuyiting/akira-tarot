@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop Tarot Cards | AKIRA TAROT 晶晶塔罗</title>
+    <meta
+      name="description"
+      content="Shop curated tarot card sets from AKIRA TAROT. Choose beginner decks, healing decks, reader sets, and study bundles, then order through Yoyo on WeChat."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="subpage shop-page">
+    <header class="site-header" aria-label="Primary navigation">
+      <a class="brand" href="index.html" aria-label="AKIRA TAROT home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        🔮 AKIRA TAROT
+      </a>
+      <div class="header-actions">
+        <nav>
+          <a href="index.html#readings" data-i18n="navServices">服务</a>
+          <a href="about.html" data-i18n="navAbout">关于</a>
+          <a href="tarot-101.html" data-i18n="navTarot101">塔罗101</a>
+          <a href="shop.html" data-i18n="navCards">商店</a>
+          <a href="index.html#booking" data-i18n="navBook">预约</a>
+        </nav>
+        <div class="language-toggle" aria-label="Language setting">
+          <button class="language-option active" type="button" data-lang="zh" aria-pressed="true">中文</button>
+          <button class="language-option" type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="subpage-hero shop-hero">
+        <div class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">AKIRA TAROT</a>
+          <span>/</span>
+          <span data-i18n="crumb">商店</span>
+        </div>
+        <p class="eyebrow" data-i18n="heroEyebrow">Tarot shop</p>
+        <h1 data-i18n="heroTitle">选择与你当下能量相合的牌卡。</h1>
+        <p data-i18n="heroCopy">
+          从新手入门、疗愈觉察到系统学习，Yoyo 为不同阶段的使用者准备了几组牌卡选择。
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#catalog">
+            <span class="icon bag" aria-hidden="true"></span>
+            <span data-i18n="shopButton">查看牌卡</span>
+          </a>
+          <a class="button secondary" href="#order">
+            <span class="icon send" aria-hidden="true"></span>
+            <span data-i18n="wechatButton">微信购买</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="content-band muted-band">
+        <div class="section-intro">
+          <p class="eyebrow" data-i18n="howEyebrow">How it works</p>
+          <h2 data-i18n="howTitle">购买流程很简单。</h2>
+        </div>
+        <div class="timeline-list">
+          <article>
+            <span>01</span>
+            <p data-i18n="stepOne">选择你感兴趣的牌卡套组。</p>
+          </article>
+          <article>
+            <span>02</span>
+            <p data-i18n="stepTwo">点击 Buy Now，页面会生成给 Yoyo 的购买提示。</p>
+          </article>
+          <article>
+            <span>03</span>
+            <p data-i18n="stepThree">添加微信 yoyoran，发送选择内容，确认价格、库存与邮寄方式。</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="catalog" class="content-band">
+        <div class="section-intro">
+          <p class="eyebrow" data-i18n="catalogEyebrow">Curated sets</p>
+          <h2 data-i18n="catalogTitle">牌卡套组选项</h2>
+        </div>
+        <div class="shop-page-layout">
+          <div class="shop-card-grid">
+            <article class="shop-card" data-product-key="classic">
+              <div class="shop-card-art">
+                <img src="assets/shop-classic.jpg" alt="经典入门塔罗牌套组" />
+              </div>
+              <p data-i18n="classicKicker">Beginner friendly</p>
+              <h3 data-i18n="classicTitle">经典入门塔罗牌</h3>
+              <p data-i18n="classicCopy">适合刚开始学习塔罗的人，图像清晰、牌义资料丰富，容易建立基础。</p>
+              <strong data-i18n="classicPrice">价格请咨询</strong>
+              <button class="button product-button shop-select" type="button" data-product-key="classic">
+                <span class="icon bag" aria-hidden="true"></span>
+                <span data-i18n="selectButton">选择</span>
+              </button>
+            </article>
+            <article class="shop-card" data-product-key="healing">
+              <div class="shop-card-art">
+                <img src="assets/shop-healing.jpg" alt="疗愈系直觉牌卡套组" />
+              </div>
+              <p data-i18n="healingKicker">Soft intuitive</p>
+              <h3 data-i18n="healingTitle">疗愈系直觉牌卡</h3>
+              <p data-i18n="healingCopy">适合日常觉察、情绪陪伴和自我照顾，画风柔和，使用感轻盈。</p>
+              <strong data-i18n="healingPrice">价格请咨询</strong>
+              <button class="button product-button shop-select" type="button" data-product-key="healing">
+                <span class="icon bag" aria-hidden="true"></span>
+                <span data-i18n="selectButton">选择</span>
+              </button>
+            </article>
+            <article class="shop-card" data-product-key="reader">
+              <div class="shop-card-art">
+                <img src="assets/shop-reader.jpg" alt="进阶解读者牌组" />
+              </div>
+              <p data-i18n="readerKicker">Reader setup</p>
+              <h3 data-i18n="readerTitle">进阶解读者牌组</h3>
+              <p data-i18n="readerCopy">适合已经有基础、想练习关系、事业、流年或复杂牌阵的学习者。</p>
+              <strong data-i18n="readerPrice">价格请咨询</strong>
+              <button class="button product-button shop-select" type="button" data-product-key="reader">
+                <span class="icon bag" aria-hidden="true"></span>
+                <span data-i18n="selectButton">选择</span>
+              </button>
+            </article>
+            <article class="shop-card" data-product-key="study">
+              <div class="shop-card-art">
+                <img src="assets/shop-study.jpg" alt="塔罗学习套装" />
+              </div>
+              <p data-i18n="studyKicker">Learning bundle</p>
+              <h3 data-i18n="studyTitle">塔罗学习套装</h3>
+              <p data-i18n="studyCopy">牌卡 + 学习建议 + 入门练习方向，适合想系统开始的人。</p>
+              <strong data-i18n="studyPrice">价格请咨询</strong>
+              <button class="button product-button shop-select" type="button" data-product-key="study">
+                <span class="icon bag" aria-hidden="true"></span>
+                <span data-i18n="selectButton">选择</span>
+              </button>
+            </article>
+          </div>
+
+          <aside id="order" class="order-panel" aria-live="polite">
+            <p class="panel-label" data-i18n="orderLabel">您的选择</p>
+            <h3 data-i18n="orderTitle">通过微信购买</h3>
+            <ul id="shopCart">
+              <li data-i18n="cartEmpty">还没有选择牌卡。</li>
+            </ul>
+            <div class="wechat-card">
+              <span data-i18n="wechatIdLabel">微信 ID</span>
+              <strong>yoyoran</strong>
+            </div>
+            <button class="button primary wide" id="buyNowButton" type="button">
+              <span class="icon send" aria-hidden="true"></span>
+              <span data-i18n="buyNow">Buy Now</span>
+            </button>
+            <button class="button ghost wide" id="copyWechatButton" type="button">
+              <span class="icon book" aria-hidden="true"></span>
+              <span data-i18n="copyWechat">复制微信 ID</span>
+            </button>
+            <p class="form-note" id="shopNote" role="status"></p>
+          </aside>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <p>🔮 AKIRA TAROT 🌟 晶晶塔罗</p>
+      <div>
+        <a href="about.html" data-i18n="navAbout">关于</a>
+        <a href="tarot-101.html" data-i18n="navTarot101">塔罗101</a>
+        <a href="shop.html" data-i18n="navCards">商店</a>
+        <a href="index.html#booking" data-i18n="navBook">预约</a>
+      </div>
+    </footer>
+
+    <script>
+      const pageTranslations = {
+        zh: {
+          navAbout: "关于",
+          navServices: "服务",
+          navTarot101: "塔罗101",
+          navCards: "商店",
+          navBook: "预约",
+          crumb: "商店",
+          heroEyebrow: "塔罗牌商店",
+          heroTitle: "选择与你当下能量相合的牌卡。",
+          heroCopy: "从新手入门、疗愈觉察到系统学习，Yoyo 为不同阶段的使用者准备了几组牌卡选择。",
+          shopButton: "查看牌卡",
+          wechatButton: "微信购买",
+          catalogEyebrow: "精选套组",
+          catalogTitle: "牌卡套组选项",
+          classicKicker: "新手友好",
+          classicTitle: "经典入门塔罗牌",
+          classicCopy: "适合刚开始学习塔罗的人，图像清晰、牌义资料丰富，容易建立基础。",
+          classicPrice: "价格请咨询",
+          healingKicker: "疗愈直觉",
+          healingTitle: "疗愈系直觉牌卡",
+          healingCopy: "适合日常觉察、情绪陪伴和自我照顾，画风柔和，使用感轻盈。",
+          healingPrice: "价格请咨询",
+          readerKicker: "进阶解读",
+          readerTitle: "进阶解读者牌组",
+          readerCopy: "适合已经有基础、想练习关系、事业、流年或复杂牌阵的学习者。",
+          readerPrice: "价格请咨询",
+          studyKicker: "学习套装",
+          studyTitle: "塔罗学习套装",
+          studyCopy: "牌卡 + 学习建议 + 入门练习方向，适合想系统开始的人。",
+          studyPrice: "价格请咨询",
+          selectButton: "选择",
+          selectedButton: "已选择",
+          orderLabel: "您的选择",
+          orderTitle: "通过微信购买",
+          cartEmpty: "还没有选择牌卡。",
+          wechatIdLabel: "微信 ID",
+          buyNow: "Buy Now",
+          copyWechat: "复制微信 ID",
+          noSelection: "请先选择想购买的牌卡套组。",
+          orderPrefix: "请添加微信 yoyoran，并发送：我想购买 ",
+          orderSuffix: "。想确认价格、库存和邮寄方式。",
+          copyDone: "已复制微信 ID：yoyoran",
+          copyFallback: "微信 ID：yoyoran",
+          howEyebrow: "购买流程",
+          howTitle: "购买流程很简单。",
+          stepOne: "选择你感兴趣的牌卡套组。",
+          stepTwo: "点击 Buy Now，页面会生成给 Yoyo 的购买提示。",
+          stepThree: "添加微信 yoyoran，发送选择内容，确认价格、库存与邮寄方式。",
+        },
+        en: {
+          navAbout: "About",
+          navServices: "Services",
+          navTarot101: "Tarot 101",
+          navCards: "Shop",
+          navBook: "Book",
+          crumb: "Shop",
+          heroEyebrow: "Tarot shop",
+          heroTitle: "Choose a deck that matches your current energy.",
+          heroCopy: "From beginner study to healing reflection, Yoyo curates several card-set options for different stages.",
+          shopButton: "View Cards",
+          wechatButton: "Order on WeChat",
+          catalogEyebrow: "Curated sets",
+          catalogTitle: "Tarot card set options",
+          classicKicker: "Beginner friendly",
+          classicTitle: "Classic Starter Tarot Deck",
+          classicCopy: "For people beginning tarot study. Clear imagery, rich learning references, and easy foundations.",
+          classicPrice: "Ask for price",
+          healingKicker: "Soft intuitive",
+          healingTitle: "Healing Intuition Deck",
+          healingCopy: "For daily reflection, emotional support, and self-care. Soft visuals with a light reading feel.",
+          healingPrice: "Ask for price",
+          readerKicker: "Advanced reading",
+          readerTitle: "Reader Practice Deck",
+          readerCopy: "For learners with foundations who want to practice relationship, career, timing, or complex spreads.",
+          readerPrice: "Ask for price",
+          studyKicker: "Learning bundle",
+          studyTitle: "Tarot Study Set",
+          studyCopy: "Cards, learning guidance, and starter practice direction for a more systematic beginning.",
+          studyPrice: "Ask for price",
+          selectButton: "Select",
+          selectedButton: "Selected",
+          orderLabel: "Your selection",
+          orderTitle: "Order through WeChat",
+          cartEmpty: "No card set selected yet.",
+          wechatIdLabel: "WeChat ID",
+          buyNow: "Buy Now",
+          copyWechat: "Copy WeChat ID",
+          noSelection: "Please select a card set first.",
+          orderPrefix: "Please add WeChat yoyoran and send: I want to order ",
+          orderSuffix: ". I would like to confirm price, availability, and shipping.",
+          copyDone: "Copied WeChat ID: yoyoran",
+          copyFallback: "WeChat ID: yoyoran",
+          howEyebrow: "How it works",
+          howTitle: "The order flow is simple.",
+          stepOne: "Choose the card set you are interested in.",
+          stepTwo: "Click Buy Now and the page will prepare a message for Yoyo.",
+          stepThree: "Add WeChat yoyoran, send your selection, then confirm price, stock, and shipping.",
+        },
+      };
+
+      const productNames = {
+        zh: {
+          classic: "经典入门塔罗牌",
+          healing: "疗愈系直觉牌卡",
+          reader: "进阶解读者牌组",
+          study: "塔罗学习套装",
+        },
+        en: {
+          classic: "Classic Starter Tarot Deck",
+          healing: "Healing Intuition Deck",
+          reader: "Reader Practice Deck",
+          study: "Tarot Study Set",
+        },
+      };
+
+      let pageLang = "zh";
+      const selectedProducts = new Set();
+      const languageButtons = document.querySelectorAll(".language-option");
+      const selectButtons = document.querySelectorAll(".shop-select");
+      const shopCart = document.querySelector("#shopCart");
+      const shopNote = document.querySelector("#shopNote");
+      const buyNowButton = document.querySelector("#buyNowButton");
+      const copyWechatButton = document.querySelector("#copyWechatButton");
+
+      function t(key) {
+        return pageTranslations[pageLang][key];
+      }
+
+      function setPageLanguage(lang) {
+        pageLang = lang;
+        document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
+        Object.entries(pageTranslations[pageLang]).forEach(([key, value]) => {
+          document.querySelectorAll(`[data-i18n="${key}"]`).forEach((node) => {
+            node.textContent = value;
+          });
+        });
+        languageButtons.forEach((button) => {
+          const active = button.dataset.lang === pageLang;
+          button.classList.toggle("active", active);
+          button.setAttribute("aria-pressed", String(active));
+        });
+        renderCart();
+      }
+
+      function renderCart() {
+        if (selectedProducts.size === 0) {
+          shopCart.innerHTML = `<li>${t("cartEmpty")}</li>`;
+        } else {
+          shopCart.innerHTML = Array.from(selectedProducts)
+            .map((key) => `<li>${productNames[pageLang][key]}</li>`)
+            .join("");
+        }
+
+        selectButtons.forEach((button) => {
+          const selected = selectedProducts.has(button.dataset.productKey);
+          button.classList.toggle("selected", selected);
+          button.querySelector("[data-i18n]").textContent = selected ? t("selectedButton") : t("selectButton");
+        });
+      }
+
+      selectButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const key = button.dataset.productKey;
+          if (selectedProducts.has(key)) {
+            selectedProducts.delete(key);
+          } else {
+            selectedProducts.add(key);
+          }
+          shopNote.textContent = "";
+          renderCart();
+        });
+      });
+
+      buyNowButton.addEventListener("click", () => {
+        if (selectedProducts.size === 0) {
+          shopNote.textContent = t("noSelection");
+          return;
+        }
+
+        const names = Array.from(selectedProducts)
+          .map((key) => productNames[pageLang][key])
+          .join(pageLang === "zh" ? "、" : ", ");
+        shopNote.textContent = `${t("orderPrefix")}${names}${t("orderSuffix")}`;
+        window.location.hash = "order";
+      });
+
+      copyWechatButton.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText("yoyoran");
+          shopNote.textContent = t("copyDone");
+        } catch {
+          shopNote.textContent = t("copyFallback");
+        }
+      });
+
+      languageButtons.forEach((button) => {
+        button.addEventListener("click", () => setPageLanguage(button.dataset.lang));
+      });
+
+      setPageLanguage("zh");
+    </script>
+  </body>
+</html>
