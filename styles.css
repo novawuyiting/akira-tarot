@@ -610,6 +610,25 @@ section:not(.hero):not(.quick-strip) {
   width: 100%;
 }
 
+.topic-link-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.topic-link-strip a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 0 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 250, 242, 0.72);
+  color: var(--tea);
+  font-weight: 760;
+}
+
 .lesson-tabs {
   width: min(100%, 680px);
   display: grid;
