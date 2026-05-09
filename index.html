@@ -6,7 +6,7 @@
     <title>🔮 AKIRA TAROT 🌟 晶晶塔罗</title>
     <meta
       name="description"
-      content="AKIRA TAROT 晶晶塔罗 offers tarot readings, consultation, healing, ritual work, and tarot classes by appointment on WeChat."
+      content="AKIRA TAROT 晶晶塔罗 offers tarot readings, consultation, healing, tarot classes, Tarot 101 learning, and curated tarot cards by appointment on WeChat."
     />
     <link rel="preload" as="image" href="assets/tarot-hero.svg" />
     <link rel="stylesheet" href="styles.css" />
@@ -67,6 +67,26 @@
         <div>
           <span data-i18n="quickWechat">微信预约</span>
           <strong>yoyoran</strong>
+        </div>
+      </section>
+
+      <section class="explore-section">
+        <div class="section-intro">
+          <p class="eyebrow" data-i18n="exploreEyebrow">Explore</p>
+          <h2 data-i18n="exploreTitle">先认识 AKIRA TAROT 背后的 Yoyo。</h2>
+        </div>
+        <div class="explore-grid simple-explore">
+          <a class="explore-card feature-explore-card" href="about.html">
+            <img src="assets/yoyo-profile.jpg" alt="Yoyo, founder of AKIRA TAROT" />
+            <div>
+              <span>01</span>
+              <h3 data-i18n="exploreAboutTitle">认识 Yoyo</h3>
+              <p data-i18n="exploreAboutCopy">
+                神秘而真实，温柔有力量。Yoyo 结合塔罗、瑜伽、美学与情感咨询，带来清醒、温柔、有质感的陪伴。
+              </p>
+              <strong data-i18n="exploreAboutCta">阅读完整介绍</strong>
+            </div>
+          </a>
         </div>
       </section>
 
@@ -143,92 +163,50 @@
         </div>
       </section>
 
-      <section id="learn" class="learn-section">
-        <div class="section-intro">
-          <p class="eyebrow" data-i18n="classesEyebrow">Tarot classes</p>
-          <h2 data-i18n="classesTitle">塔罗牌教学：初级 / 中级 / 高级班。</h2>
-        </div>
-        <div class="lesson-tabs" role="tablist" aria-label="Tarot class levels">
-          <button class="tab active" type="button" role="tab" aria-selected="true" data-lesson="majors">
-            <span data-i18n="tabBeginner">初级班</span>
-          </button>
-          <button class="tab" type="button" role="tab" aria-selected="false" data-lesson="suits">
-            <span data-i18n="tabIntermediate">中级班</span>
-          </button>
-          <button class="tab" type="button" role="tab" aria-selected="false" data-lesson="spreads">
-            <span data-i18n="tabAdvanced">高级班</span>
-          </button>
-          <button class="tab" type="button" role="tab" aria-selected="false" data-lesson="ethics">
-            <span data-i18n="tabPrivate">私教课</span>
-          </button>
-        </div>
-        <article class="lesson-panel">
-          <div>
-            <p class="panel-label" id="lessonKicker">初级班</p>
-            <h3 id="lessonTitle">认识牌义与基础牌阵</h3>
-            <p id="lessonCopy">
-              从大阿卡那、小阿卡那、元素与牌阵开始，建立稳定、清晰的塔罗基础。
-            </p>
-          </div>
-          <a class="button primary" href="#booking" data-service-key="classBeginner">
-            <span class="icon book" aria-hidden="true"></span>
-            <span data-i18n="classButton">咨询课程</span>
-          </a>
-        </article>
-      </section>
-
       <section id="shop" class="shop-section">
         <div class="section-intro">
-          <p class="eyebrow" data-i18n="cardsEyebrow">Tarot cards</p>
+          <p class="eyebrow" data-i18n="cardsEyebrow">AKIRA TAROT Shop</p>
           <h2 data-i18n="cardsTitle">想买塔罗牌？先选适合自己的能量。</h2>
         </div>
-        <div class="shop-layout">
+        <div class="home-shop-preview">
           <div class="product-grid">
-            <article class="product-card">
-              <div class="product-art dawn"></div>
+            <article class="product-card compact-product">
+              <div class="product-art">
+                <img src="assets/shop-classic.jpg" alt="经典入门牌" />
+              </div>
               <p data-i18n="productClassicKicker">Beginner friendly</p>
               <h3 data-i18n="productClassicTitle">经典入门牌</h3>
               <span data-i18n="productClassicMeta">适合初学者</span>
-              <button class="button product-button" type="button" data-product-key="classic">
-                <span class="icon bag" aria-hidden="true"></span>
-                <span data-i18n="addChoice">加入选择</span>
-              </button>
             </article>
-            <article class="product-card">
-              <div class="product-art velvet"></div>
+            <article class="product-card compact-product">
+              <div class="product-art">
+                <img src="assets/shop-healing.jpg" alt="疗愈系牌卡" />
+              </div>
               <p data-i18n="productHealingKicker">Soft intuitive</p>
               <h3 data-i18n="productHealingTitle">疗愈系牌卡</h3>
               <span data-i18n="productHealingMeta">适合日常觉察</span>
-              <button class="button product-button" type="button" data-product-key="healing">
-                <span class="icon bag" aria-hidden="true"></span>
-                <span data-i18n="addChoice">加入选择</span>
-              </button>
             </article>
-            <article class="product-card">
-              <div class="product-art field"></div>
+            <article class="product-card compact-product">
+              <div class="product-art">
+                <img src="assets/shop-reader.jpg" alt="进阶解读者牌组" />
+              </div>
+              <p data-i18n="productReaderKicker">Reader setup</p>
+              <h3 data-i18n="productReaderTitle">进阶解读牌组</h3>
+              <span data-i18n="productReaderMeta">适合深入练习</span>
+            </article>
+            <article class="product-card compact-product">
+              <div class="product-art">
+                <img src="assets/shop-study.jpg" alt="学习套装" />
+              </div>
               <p data-i18n="productStudyKicker">Reader setup</p>
               <h3 data-i18n="productStudyTitle">学习套装</h3>
               <span data-i18n="productStudyMeta">牌卡 + 学习建议</span>
-              <button class="button product-button" type="button" data-product-key="study">
-                <span class="icon bag" aria-hidden="true"></span>
-                <span data-i18n="addChoice">加入选择</span>
-              </button>
             </article>
           </div>
-          <aside class="cart-panel" aria-live="polite">
-            <p class="panel-label" data-i18n="cartLabel">您的选择</p>
-            <ul id="cartItems">
-              <li data-i18n="cartEmpty">还没有选择牌卡。</li>
-            </ul>
-            <div class="cart-total">
-              <span data-i18n="bookingMethod">预约方式</span>
-              <strong id="cartTotal">微信</strong>
-            </div>
-            <button class="button primary" type="button" id="checkoutButton">
-              <span class="icon lock" aria-hidden="true"></span>
-              <span data-i18n="requestPurchase">咨询购买</span>
-            </button>
-          </aside>
+          <a class="button primary" href="shop.html">
+            <span class="icon bag" aria-hidden="true"></span>
+            <span data-i18n="shopPageButton">进入商店</span>
+          </a>
         </div>
       </section>
 

@@ -15,6 +15,11 @@ const translations = {
     quickLevels: "初级 / 中级 / 高级",
     quickTeaching: "塔罗牌教学",
     quickWechat: "微信预约",
+    exploreEyebrow: "探索",
+    exploreTitle: "先认识 AKIRA TAROT 背后的 Yoyo。",
+    exploreAboutTitle: "认识 Yoyo",
+    exploreAboutCopy: "神秘而真实，温柔有力量。Yoyo 结合塔罗、瑜伽、美学与情感咨询，带来清醒、温柔、有质感的陪伴。",
+    exploreAboutCta: "阅读完整介绍",
     drawEyebrow: "今日抽牌",
     drawTitle: "静心，抽一张今日指引。",
     drawPanelLabel: "今日提示",
@@ -42,7 +47,7 @@ const translations = {
     tabAdvanced: "高级班",
     tabPrivate: "私教课",
     classButton: "咨询课程",
-    cardsEyebrow: "塔罗牌卡",
+    cardsEyebrow: "AKIRA TAROT Shop",
     cardsTitle: "想买塔罗牌？先选适合自己的能量。",
     productClassicKicker: "新手友好",
     productClassicTitle: "经典入门牌",
@@ -50,9 +55,13 @@ const translations = {
     productHealingKicker: "疗愈直觉",
     productHealingTitle: "疗愈系牌卡",
     productHealingMeta: "适合日常觉察",
+    productReaderKicker: "进阶解读",
+    productReaderTitle: "进阶解读牌组",
+    productReaderMeta: "适合深入练习",
     productStudyKicker: "学习配置",
     productStudyTitle: "学习套装",
     productStudyMeta: "牌卡 + 学习建议",
+    shopPageButton: "进入商店",
     addChoice: "加入选择",
     cartLabel: "您的选择",
     cartEmpty: "还没有选择牌卡。",
@@ -92,6 +101,11 @@ const translations = {
     quickLevels: "Beginner / Intermediate / Advanced",
     quickTeaching: "Tarot classes",
     quickWechat: "Book on WeChat",
+    exploreEyebrow: "Explore",
+    exploreTitle: "Meet Yoyo behind AKIRA TAROT.",
+    exploreAboutTitle: "Meet Yoyo",
+    exploreAboutCopy: "Mystical yet real, gentle yet powerful. Yoyo blends tarot, yoga, aesthetics, and emotional consultation into grounded, heart-centered guidance.",
+    exploreAboutCta: "Read Full Intro",
     drawEyebrow: "Daily card",
     drawTitle: "Pause, breathe, draw today's guidance.",
     drawPanelLabel: "Today's message",
@@ -119,7 +133,7 @@ const translations = {
     tabAdvanced: "Advanced",
     tabPrivate: "Private",
     classButton: "Ask About Classes",
-    cardsEyebrow: "Tarot cards",
+    cardsEyebrow: "AKIRA TAROT Shop",
     cardsTitle: "Buying tarot cards? Start with the energy that fits you.",
     productClassicKicker: "Beginner friendly",
     productClassicTitle: "Classic Starter Deck",
@@ -127,9 +141,13 @@ const translations = {
     productHealingKicker: "Soft intuitive",
     productHealingTitle: "Healing Card Deck",
     productHealingMeta: "For daily reflection",
+    productReaderKicker: "Advanced reading",
+    productReaderTitle: "Reader Practice Deck",
+    productReaderMeta: "For deeper practice",
     productStudyKicker: "Reader setup",
     productStudyTitle: "Study Starter Set",
     productStudyMeta: "Cards + learning guidance",
+    shopPageButton: "Visit Shop",
     addChoice: "Add Choice",
     cartLabel: "Your choices",
     cartEmpty: "No card type selected yet.",
@@ -267,6 +285,7 @@ function setText(key, value) {
 }
 
 function populateSessions(selectedKey = sessionSelect.dataset.selectedKey || "reading30") {
+  if (!sessionSelect) return;
   sessionSelect.innerHTML = "";
   sessionOrder.forEach((key) => {
     const option = document.createElement("option");
@@ -279,11 +298,13 @@ function populateSessions(selectedKey = sessionSelect.dataset.selectedKey || "re
 }
 
 function setSessionByKey(key) {
+  if (!sessionSelect) return;
   sessionSelect.dataset.selectedKey = key;
   sessionSelect.value = serviceValues[currentLang][key];
 }
 
 function renderLesson() {
+  if (!lessonKicker || !lessonTitle || !lessonCopy) return;
   const [kicker, title, copy] = lessons[currentLang][currentLesson];
   lessonKicker.textContent = kicker;
   lessonTitle.textContent = title;
@@ -291,12 +312,14 @@ function renderLesson() {
 }
 
 function renderCard() {
+  if (!cardName || !cardMeaning) return;
   const [name, meaning] = cards[currentLang][currentCardIndex];
   cardName.textContent = name;
   cardMeaning.textContent = meaning;
 }
 
 function renderCart() {
+  if (!cartItems || !cartTotal) return;
   if (cart.length === 0) {
     cartItems.innerHTML = `<li>${t("cartEmpty")}</li>`;
     cartTotal.textContent = t("cartMethodDefault");
@@ -308,6 +331,7 @@ function renderCart() {
 }
 
 function renderNote() {
+  if (!formNote) return;
   if (!currentNoteKey) {
     formNote.textContent = "";
     return;
@@ -363,7 +387,7 @@ tarotButtons.forEach((button) => {
   button.addEventListener("click", () => revealCard(button));
 });
 
-resetDraw.addEventListener("click", () => {
+resetDraw?.addEventListener("click", () => {
   tarotButtons.forEach((button) => button.classList.remove("revealed"));
   revealCard(tarotButtons[Math.floor(Math.random() * tarotButtons.length)]);
 });
@@ -387,7 +411,7 @@ document.querySelectorAll("[data-service-key]").forEach((link) => {
   });
 });
 
-sessionSelect.addEventListener("change", () => {
+sessionSelect?.addEventListener("change", () => {
   const selectedOption = sessionSelect.options[sessionSelect.selectedIndex];
   sessionSelect.dataset.selectedKey = selectedOption.dataset.serviceKey;
 });
@@ -401,7 +425,7 @@ document.querySelectorAll(".product-button").forEach((button) => {
   });
 });
 
-document.querySelector("#checkoutButton").addEventListener("click", () => {
+document.querySelector("#checkoutButton")?.addEventListener("click", () => {
   if (cart.length === 0) {
     currentNoteKey = "chooseCardFirst";
     renderNote();
@@ -415,7 +439,7 @@ document.querySelector("#checkoutButton").addEventListener("click", () => {
   document.querySelector("#booking").scrollIntoView({ behavior: "smooth" });
 });
 
-document.querySelector(".booking-form").addEventListener("submit", (event) => {
+document.querySelector(".booking-form")?.addEventListener("submit", (event) => {
   event.preventDefault();
   currentNoteKey = "bookingSubmitted";
   renderNote();
