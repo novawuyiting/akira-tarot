@@ -24,6 +24,11 @@ const translations = {
     drawTitle: "静心，抽一张今日指引。",
     drawPanelLabel: "今日提示",
     drawAgain: "再抽一次",
+    musicLabel: "音乐搭配",
+    musicOpen: "打开 Spotify 歌单",
+    songLabel: "今日歌曲",
+    previewPlay: "试听 15 秒",
+    previewStop: "停止试听",
     servicesEyebrow: "服务",
     servicesTitle: "选择适合您的咨询方式。",
     serviceType: "占卜 咨询 疗愈",
@@ -112,6 +117,11 @@ const translations = {
     drawTitle: "Pause, breathe, draw today's guidance.",
     drawPanelLabel: "Today's message",
     drawAgain: "Draw Again",
+    musicLabel: "Music pairing",
+    musicOpen: "Open Spotify Playlist",
+    songLabel: "Song pick",
+    previewPlay: "Play 15s Preview",
+    previewStop: "Stop Preview",
     servicesEyebrow: "Services",
     servicesTitle: "Choose the reading style that fits your question.",
     serviceType: "Reading · Consultation · Healing",
@@ -179,22 +189,50 @@ const translations = {
 
 const cards = {
   zh: [
-    ["女祭司", "相信安静的直觉。答案也许先以感受出现，再慢慢变成清晰的方向。"],
-    ["星星", "让希望变得具体。今天选择一个温柔但明确的小行动，能量会慢慢回到你身边。"],
-    ["圣杯二", "关系需要真诚的回应。把话说清楚，把心放柔软，连接会更容易被看见。"],
-    ["星币八", "回到练习与积累。重复不是停滞，而是让机会变得稳定的过程。"],
-    ["死神", "让结束真正结束。释放旧模式以后，新的空间才会自然出现。"],
-    ["权杖皇后", "带着热情与自信前进。当你确认自己的选择，吸引力也会随之增强。"],
+    ["女祭司", "相信安静的直觉。答案也许先以感受出现，再慢慢变成清晰的方向。", "安静直觉", "配一段柔和的歌单，让直觉先安静下来。"],
+    ["星星", "让希望变得具体。今天选择一个温柔但明确的小行动，能量会慢慢回到你身边。", "希望复原", "适合在整理心情时播放，提醒自己慢慢回到光里。"],
+    ["圣杯二", "关系需要真诚的回应。把话说清楚，把心放柔软，连接会更容易被看见。", "温柔连接", "把音乐当成一封慢慢打开的信，留给关系一点柔软空间。"],
+    ["星币八", "回到练习与积累。重复不是停滞，而是让机会变得稳定的过程。", "专注练习", "适合工作、写计划、复盘，让能量回到稳定的节奏。"],
+    ["死神", "让结束真正结束。释放旧模式以后，新的空间才会自然出现。", "释放重启", "适合在断舍离、告别旧模式时听，给自己一个干净的转场。"],
+    ["权杖皇后", "带着热情与自信前进。当你确认自己的选择，吸引力也会随之增强。", "自信显化", "播放一点更有能量的声音，帮你找回行动感与存在感。"],
   ],
   en: [
-    ["The High Priestess", "Trust the quiet signal. The answer may arrive as a feeling before it becomes a clear direction."],
-    ["The Star", "Let hope become practical. One gentle, concrete action can bring your energy back today."],
-    ["Two of Cups", "Connection asks for honest response. Speak clearly, soften your heart, and let the bond be seen."],
-    ["Eight of Pentacles", "Return to practice. Repetition is not delay; it is how opportunity becomes stable."],
-    ["Death", "Let the ending truly end. When an old pattern is released, new space can appear."],
-    ["Queen of Wands", "Move with warmth and confidence. Your magnetism grows when your choice is clear."],
+    ["The High Priestess", "Trust the quiet signal. The answer may arrive as a feeling before it becomes a clear direction.", "Quiet Intuition", "Let the playlist soften the room so your intuition can speak first."],
+    ["The Star", "Let hope become practical. One gentle, concrete action can bring your energy back today.", "Hope Reset", "Play this while you reset your mood and choose one kind next step."],
+    ["Two of Cups", "Connection asks for honest response. Speak clearly, soften your heart, and let the bond be seen.", "Gentle Connection", "Use the music like a slow letter: open, honest, and emotionally clear."],
+    ["Eight of Pentacles", "Return to practice. Repetition is not delay; it is how opportunity becomes stable.", "Focused Practice", "A steady soundtrack for planning, study, and returning to your craft."],
+    ["Death", "Let the ending truly end. When an old pattern is released, new space can appear.", "Release & Restart", "Listen while clearing old energy and giving yourself a clean transition."],
+    ["Queen of Wands", "Move with warmth and confidence. Your magnetism grows when your choice is clear.", "Confident Glow", "Turn the volume up slightly and let your presence come back online."],
   ],
 };
+
+const spotifyTracks = [
+  { title: "Miss Your Body", artist: "nate band", url: "https://open.spotify.com/track/0IPBqw1WDfXfkzJgQaYOl9", preview: "https://p.scdn.co/mp3-preview/608cfa7ecc3dee6e5d85998c5293935ad5ce220d" },
+  { title: "NOW OR NEVER", artist: "Tkandz, CXSPER", url: "https://open.spotify.com/track/6JPysVgPfEab03Gbm7hjXM", preview: "https://p.scdn.co/mp3-preview/b773d00a721cf398d48be6e0bc88b66dd7b2c398" },
+  { title: "My Ride or Die", artist: "Doc Raven", url: "https://open.spotify.com/track/6eo9UbUfjybG8VQLYspVO6", preview: "https://p.scdn.co/mp3-preview/37a05fbcfc20498072a7e6e3a0238e4e0d2f6dfb" },
+  { title: "I Don't Care", artist: "VIOLENT VIRA", url: "https://open.spotify.com/track/0hlzl6zaN6misc6V0JbhaP", preview: "https://p.scdn.co/mp3-preview/854adddee1aa395980ef9ddfe63f3847bfae412b" },
+  { title: "You're Not Gone, You're Just Dead!", artist: "VIOLENT VIRA", url: "https://open.spotify.com/track/0yN0XNcTaRpvIcEkyv5Uay", preview: "https://p.scdn.co/mp3-preview/8c51f468b9b34fb52e23cc9a6664c308053be7cd" },
+  { title: "Love Me", artist: "JMSN", url: "https://open.spotify.com/track/2hY9mOKGblxfNFl2GOQKj4", preview: "https://p.scdn.co/mp3-preview/c86239df8209be1bede5196fda3f73bd2feec43f" },
+  { title: "Side To Side", artist: "nate band", url: "https://open.spotify.com/track/7iV2AhBH3BIS1AM9CzRWcj", preview: "https://p.scdn.co/mp3-preview/176db73cb72b0106e57e5c68c102f138c1249e26" },
+  { title: "Let It Snow! Let It Snow! Let It Snow!", artist: "Dean Martin", url: "https://open.spotify.com/track/2uFaJJtFpPDc5Pa95XzTvg", preview: "https://p.scdn.co/mp3-preview/1ef163efdd3087a004a81dcacadb59a5bee41b4f" },
+  { title: "endgame", artist: "PET3RPUNX", url: "https://open.spotify.com/track/0c1ohDcVu36gmgb4BWv35q", preview: "https://p.scdn.co/mp3-preview/43e4abb569c86385baeca9ad197ffb5c75a975ad" },
+  { title: "Raging Love", artist: "Nine Vicious", url: "https://open.spotify.com/track/2dsYk3XN4OljAm2YYvzTfm", preview: "https://p.scdn.co/mp3-preview/945d869e5875a7a079ef365b6559e1449e3f457f" },
+  { title: "Riri", artist: "Nine Vicious", url: "https://open.spotify.com/track/5kKvWDFTaU051eSrfShbQF", preview: "https://p.scdn.co/mp3-preview/463090ad2374ea52cf53672ea0d1a9c5eed50df4" },
+  { title: "911", artist: "Parker Jack, Eon Zero, HunnaV, Jake Luke", url: "https://open.spotify.com/track/1Zs590HdD7NAElSfUJ5wpi", preview: "https://p.scdn.co/mp3-preview/3fcef529236d96ac317bfd8302aafea27c33dc0c" },
+  { title: "Self Aware", artist: "Temper City", url: "https://open.spotify.com/track/4qW3BbQAwZsrnu8a3ZRdyT", preview: "https://p.scdn.co/mp3-preview/98af5b6b77831ad55b6d1129148745705a311973" },
+  { title: "11:11", artist: "nate band", url: "https://open.spotify.com/track/6q5wkwldXvaikgjIEpOUNu", preview: "https://p.scdn.co/mp3-preview/5def0010af2582169e4d2d45884f7ae067edba6e" },
+  { title: "Radiate", artist: "HAPPY LANDING", url: "https://open.spotify.com/track/1Ryj5jNN7UIbX4x8KOaljx", preview: "https://p.scdn.co/mp3-preview/91e045858ec01108f4566b7ad36694352e833e58" },
+  { title: "MATADORA", artist: "DJ Asul", url: "https://open.spotify.com/track/7jqxHXlu3Ya7WF7lD7tIXj", preview: "https://p.scdn.co/mp3-preview/9af16414db20ff5e7f49fdb1bafe00fd311b7365" },
+];
+
+const cardSongPools = [
+  [12, 13, 14],
+  [1, 13, 14],
+  [0, 2, 5, 6],
+  [1, 8, 12],
+  [3, 4, 8],
+  [9, 10, 11, 14, 15],
+];
 
 const lessons = {
   zh: {
@@ -262,10 +300,20 @@ const cart = [];
 let currentLang = "zh";
 let currentLesson = "majors";
 let currentCardIndex = 0;
+let currentSongIndex = 13;
 let currentNoteKey = "";
+let previewTimer = null;
 
 const cardName = document.querySelector("#cardName");
 const cardMeaning = document.querySelector("#cardMeaning");
+const musicMood = document.querySelector("#musicMood");
+const musicCopy = document.querySelector("#musicCopy");
+const musicLink = document.querySelector("#musicLink");
+const songTitle = document.querySelector("#songTitle");
+const songArtist = document.querySelector("#songArtist");
+const previewButton = document.querySelector("#previewButton");
+const previewButtonLabel = document.querySelector("#previewButtonLabel");
+const songPreview = document.querySelector("#songPreview");
 const tarotButtons = document.querySelectorAll(".tarot-card");
 const resetDraw = document.querySelector("#resetDraw");
 const tabs = document.querySelectorAll(".tab");
@@ -317,9 +365,59 @@ function renderLesson() {
 
 function renderCard() {
   if (!cardName || !cardMeaning) return;
-  const [name, meaning] = cards[currentLang][currentCardIndex];
+  const [name, meaning, mood, copy] = cards[currentLang][currentCardIndex];
+  const song = spotifyTracks[currentSongIndex];
   cardName.textContent = name;
   cardMeaning.textContent = meaning;
+  if (musicMood) musicMood.textContent = mood;
+  if (musicCopy) musicCopy.textContent = copy;
+  if (songTitle) songTitle.textContent = song.title;
+  if (songArtist) songArtist.textContent = song.artist;
+  if (musicLink) musicLink.href = "https://open.spotify.com/playlist/2xwGm15lVch0KUJdOCPcnM";
+  resetSongPreview();
+}
+
+function pickSongForCard(cardIndex) {
+  const pool = cardSongPools[cardIndex] || spotifyTracks.map((_, index) => index);
+  currentSongIndex = pool[Math.floor(Math.random() * pool.length)];
+}
+
+function resetSongPreview() {
+  if (!songPreview || !previewButton || !previewButtonLabel) return;
+  window.clearTimeout(previewTimer);
+  songPreview.pause();
+  songPreview.currentTime = 0;
+  songPreview.removeAttribute("src");
+  previewButton.classList.remove("is-playing");
+  previewButtonLabel.textContent = t("previewPlay");
+}
+
+function stopSongPreview() {
+  if (!songPreview || !previewButton || !previewButtonLabel) return;
+  window.clearTimeout(previewTimer);
+  songPreview.pause();
+  songPreview.currentTime = 0;
+  previewButton.classList.remove("is-playing");
+  previewButtonLabel.textContent = t("previewPlay");
+}
+
+function playSongPreview() {
+  if (!songPreview || !previewButton || !previewButtonLabel) return;
+  window.clearTimeout(previewTimer);
+  const song = spotifyTracks[currentSongIndex];
+  if (songPreview.src !== song.preview) {
+    songPreview.src = song.preview;
+  }
+  songPreview.currentTime = 0;
+  songPreview.play().then(() => {
+    previewButton.classList.add("is-playing");
+    previewButtonLabel.textContent = t("previewStop");
+  }).catch(() => {
+    stopSongPreview();
+  });
+  previewTimer = window.setTimeout(() => {
+    if (!songPreview.paused) stopSongPreview();
+  }, 15000);
 }
 
 function renderCart() {
@@ -378,6 +476,7 @@ function setLanguage(lang) {
 
 function revealCard(button) {
   currentCardIndex = Math.floor(Math.random() * cards[currentLang].length);
+  pickSongForCard(currentCardIndex);
   tarotButtons.forEach((item) => item.classList.remove("revealed"));
   button.classList.add("revealed");
   renderCard();
@@ -395,6 +494,16 @@ resetDraw?.addEventListener("click", () => {
   tarotButtons.forEach((button) => button.classList.remove("revealed"));
   revealCard(tarotButtons[Math.floor(Math.random() * tarotButtons.length)]);
 });
+
+previewButton?.addEventListener("click", () => {
+  if (songPreview && !songPreview.paused) {
+    stopSongPreview();
+    return;
+  }
+  playSongPreview();
+});
+
+songPreview?.addEventListener("ended", stopSongPreview);
 
 tabs.forEach((tab) => {
   tab.addEventListener("click", () => {

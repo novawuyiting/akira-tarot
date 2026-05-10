@@ -338,6 +338,16 @@ h3 {
   border-left-color: transparent;
 }
 
+.play::before {
+  inset: 3px 2px 3px 5px;
+  border-width: 5px 0 5px 8px;
+  border-color: transparent transparent transparent currentColor;
+}
+
+.play::after {
+  display: none;
+}
+
 .book::after {
   left: 8px;
   right: auto;
@@ -504,6 +514,83 @@ section:not(.hero):not(.quick-strip) {
 .reading-panel p:not(.panel-label),
 .lesson-panel p:not(.panel-label) {
   color: var(--soft-ink);
+}
+
+.music-pairing {
+  display: grid;
+  gap: 10px;
+  margin: 4px 0 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.music-pairing h4 {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.35rem, 2.5vw, 1.8rem);
+  font-weight: 700;
+}
+
+.music-pairing p:not(.panel-label) {
+  margin: 0;
+  color: var(--soft-ink);
+}
+
+.song-prescription {
+  display: grid;
+  gap: 3px;
+  margin-top: 4px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(246, 239, 228, 0.72);
+}
+
+.song-prescription span {
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.song-prescription strong {
+  color: var(--ink);
+  font-size: 1rem;
+}
+
+.song-prescription small {
+  color: var(--soft-ink);
+  font-size: 0.9rem;
+}
+
+.preview-button {
+  width: fit-content;
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 14px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  background: var(--ink);
+  color: #fffaf2;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.preview-button.is-playing {
+  background: transparent;
+  color: var(--ink);
+}
+
+.music-link {
+  width: fit-content;
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
 }
 
 .service-grid,

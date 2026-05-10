@@ -120,6 +120,29 @@
             <p id="cardMeaning">
               相信安静的直觉。答案也许先以感受出现，再慢慢变成清晰的方向。
             </p>
+            <div class="music-pairing" aria-label="Spotify music pairing">
+              <p class="panel-label" data-i18n="musicLabel">音乐搭配</p>
+              <h4 id="musicMood">安静直觉</h4>
+              <p id="musicCopy">配一段柔和的歌单，让直觉先安静下来。</p>
+              <div class="song-prescription">
+                <span data-i18n="songLabel">今日歌曲</span>
+                <strong id="songTitle">11:11</strong>
+                <small id="songArtist">nate band</small>
+              </div>
+              <button class="preview-button" id="previewButton" type="button">
+                <span class="icon play" aria-hidden="true"></span>
+                <span id="previewButtonLabel" data-i18n="previewPlay">试听 15 秒</span>
+              </button>
+              <audio id="songPreview" preload="none"></audio>
+              <a
+                class="music-link"
+                id="musicLink"
+                href="https://open.spotify.com/playlist/2xwGm15lVch0KUJdOCPcnM"
+                target="_blank"
+                rel="noopener"
+                data-i18n="musicOpen"
+              >打开 Spotify 歌单</a>
+            </div>
             <button class="button ghost" id="resetDraw" type="button">
               <span class="icon refresh" aria-hidden="true"></span>
               <span data-i18n="drawAgain">再抽一次</span>
