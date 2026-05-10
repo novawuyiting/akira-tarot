@@ -706,9 +706,6 @@ section:not(.hero):not(.quick-strip) {
 }
 
 .email-action {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   min-height: 38px;
   padding: 8px 14px;
   border: 1px solid rgba(255, 114, 173, 0.35);
