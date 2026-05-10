@@ -75,8 +75,12 @@ const translations = {
     bookingMethod: "预约方式",
     requestPurchase: "咨询购买",
     bookingEyebrow: "预约",
-    bookingTitle: "预约请加微信 yoyoran。",
+    bookingTitle: "预约请加微信 yoyoran，或发邮件给 Yoyo。",
     bookingCopy: "请说明您想预约的服务、问题方向与方便的时间。AKIRA TAROT 会为您安排咨询。",
+    wechatBookingKicker: "微信预约",
+    wechatBookingCopy: "适合快速确认时间与服务。",
+    emailBookingKicker: "邮件预约",
+    emailBookingCopy: "不方便使用微信时，可以直接发送邮件。",
     nameLabel: "姓名",
     namePlaceholder: "您的称呼",
     contactLabel: "联系方式",
@@ -168,8 +172,12 @@ const translations = {
     bookingMethod: "Booking method",
     requestPurchase: "Ask to Purchase",
     bookingEyebrow: "Booking",
-    bookingTitle: "Book on WeChat: yoyoran.",
+    bookingTitle: "Book on WeChat or email Yoyo.",
     bookingCopy: "Share the service you want, your question theme, and your preferred time. AKIRA TAROT will help arrange your session.",
+    wechatBookingKicker: "WeChat booking",
+    wechatBookingCopy: "Best for quick scheduling and service confirmation.",
+    emailBookingKicker: "Email booking",
+    emailBookingCopy: "Prefer not to use WeChat? Send Yoyo an email directly.",
     nameLabel: "Name",
     namePlaceholder: "Your name",
     contactLabel: "Contact",
@@ -556,6 +564,13 @@ document.querySelectorAll('a[href="#booking"]').forEach((link) => {
       source: "homepage_booking_link",
       link_text: link.textContent.trim(),
     });
+  });
+});
+
+document.querySelector("[data-email-booking]")?.addEventListener("click", () => {
+  trackEvent("click_email_booking", {
+    source: "homepage_booking",
+    email: "yoyo.ranjing@gmail.com",
   });
 });
 
