@@ -668,7 +668,8 @@ section:not(.hero):not(.quick-strip) {
 }
 
 .booking-contact-card:hover,
-.booking-contact-card:focus-visible {
+.booking-contact-card:focus-visible,
+.booking-contact-card:focus-within {
   transform: translateY(-2px);
   border-color: rgba(255, 114, 173, 0.5);
   box-shadow: 0 22px 54px rgba(42, 16, 40, 0.14);
@@ -695,6 +696,40 @@ section:not(.hero):not(.quick-strip) {
   background:
     radial-gradient(circle at 92% 12%, rgba(197, 160, 255, 0.18), transparent 30%),
     rgba(255, 247, 241, 0.88);
+}
+
+.email-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.email-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 8px 14px;
+  border: 1px solid rgba(255, 114, 173, 0.35);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.48);
+  color: var(--ink);
+  font-weight: 800;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.email-action:hover,
+.email-action:focus-visible {
+  transform: translateY(-1px);
+  border-color: rgba(255, 114, 173, 0.7);
+  background: rgba(255, 114, 173, 0.18);
+}
+
+.booking-contact-card .email-action span {
+  color: inherit;
+  font-size: 0.9rem;
 }
 
 .reading-panel {

@@ -266,15 +266,29 @@
               <strong>yoyoran</strong>
               <span data-i18n="wechatBookingCopy">适合快速确认时间与服务。</span>
             </a>
-            <a
-              class="booking-contact-card email-card"
-              href="mailto:yoyo.ranjing@gmail.com?subject=AKIRA%20TAROT%20Booking%20Request&body=Hi%20Yoyo%2C%0A%0AI%20would%20like%20to%20book%20a%20tarot%20reading.%0A%0AService%3A%0AQuestion%20focus%3A%0APreferred%20time%3A%0A%0AThank%20you."
-              data-email-booking
-            >
+            <div class="booking-contact-card email-card">
               <span class="contact-kicker" data-i18n="emailBookingKicker">邮件预约</span>
               <strong>yoyo.ranjing@gmail.com</strong>
               <span data-i18n="emailBookingCopy">不方便使用微信时，可以直接发送邮件。</span>
-            </a>
+              <div class="email-actions">
+                <a
+                  class="email-action"
+                  href="mailto:yoyo.ranjing@gmail.com?subject=AKIRA%20TAROT%20Booking%20Request&body=Hi%20Yoyo%2C%0A%0AI%20would%20like%20to%20book%20a%20tarot%20reading.%0A%0AService%3A%0AQuestion%20focus%3A%0APreferred%20time%3A%0A%0AThank%20you."
+                  data-email-booking="mail_app"
+                >
+                  <span data-i18n="mailAppButton">邮件 App</span>
+                </a>
+                <a
+                  class="email-action"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=yoyo.ranjing%40gmail.com&su=AKIRA%20TAROT%20Booking%20Request&body=Hi%20Yoyo%2C%0A%0AI%20would%20like%20to%20book%20a%20tarot%20reading.%0A%0AService%3A%0AQuestion%20focus%3A%0APreferred%20time%3A%0A%0AThank%20you."
+                  target="_blank"
+                  rel="noopener"
+                  data-email-booking="gmail_web"
+                >
+                  <span data-i18n="gmailButton">Gmail 网页</span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
         <form class="booking-form">

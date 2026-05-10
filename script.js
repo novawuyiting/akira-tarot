@@ -81,6 +81,8 @@ const translations = {
     wechatBookingCopy: "适合快速确认时间与服务。",
     emailBookingKicker: "邮件预约",
     emailBookingCopy: "不方便使用微信时，可以直接发送邮件。",
+    mailAppButton: "邮件 App",
+    gmailButton: "Gmail 网页",
     nameLabel: "姓名",
     namePlaceholder: "您的称呼",
     contactLabel: "联系方式",
@@ -178,6 +180,8 @@ const translations = {
     wechatBookingCopy: "Best for quick scheduling and service confirmation.",
     emailBookingKicker: "Email booking",
     emailBookingCopy: "Prefer not to use WeChat? Send Yoyo an email directly.",
+    mailAppButton: "Mail App",
+    gmailButton: "Gmail Web",
     nameLabel: "Name",
     namePlaceholder: "Your name",
     contactLabel: "Contact",
@@ -567,10 +571,13 @@ document.querySelectorAll('a[href="#booking"]').forEach((link) => {
   });
 });
 
-document.querySelector("[data-email-booking]")?.addEventListener("click", () => {
-  trackEvent("click_email_booking", {
-    source: "homepage_booking",
-    email: "yoyo.ranjing@gmail.com",
+document.querySelectorAll("[data-email-booking]").forEach((link) => {
+  link.addEventListener("click", () => {
+    trackEvent("click_email_booking", {
+      source: "homepage_booking",
+      method: link.dataset.emailBooking,
+      email: "yoyo.ranjing@gmail.com",
+    });
   });
 });
 
