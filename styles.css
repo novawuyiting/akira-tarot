@@ -524,6 +524,10 @@ section:not(.hero):not(.quick-strip) {
   margin-bottom: 30px;
 }
 
+.compact-intro {
+  margin-bottom: 18px;
+}
+
 .draw-section,
 .learn-section,
 .explore-section {
@@ -978,6 +982,45 @@ section:not(.hero):not(.quick-strip) {
   background: rgba(255, 247, 241, 0.82);
 }
 
+.article-links-section {
+  background:
+    radial-gradient(circle at 88% 18%, rgba(255, 114, 173, 0.16), transparent 28%),
+    #f8eeee;
+}
+
+.more-articles {
+  margin-top: 14px;
+}
+
+.more-articles summary {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1px solid rgba(42, 16, 40, 0.16);
+  border-radius: 999px;
+  background: #2a1028;
+  color: #fff7f1;
+  font-weight: 800;
+  cursor: pointer;
+  list-style: none;
+}
+
+.more-articles summary::-webkit-details-marker {
+  display: none;
+}
+
+.more-articles summary::after {
+  content: "+";
+  margin-left: 10px;
+  color: var(--rose);
+  font-size: 1.2rem;
+}
+
+.more-articles[open] summary::after {
+  content: "-";
+}
+
 .lesson-tabs {
   width: min(100%, 680px);
   display: grid;
@@ -1210,6 +1253,24 @@ footer div {
 
 .content-band.muted-band {
   background: #f1e8dc;
+}
+
+.reading-split {
+  display: grid;
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+  gap: clamp(24px, 6vw, 72px);
+  align-items: start;
+}
+
+.article-feature {
+  align-items: center;
+}
+
+.article-image {
+  width: 100%;
+  display: block;
+  border-radius: 24px;
+  box-shadow: 0 24px 70px rgba(42, 16, 40, 0.16);
 }
 
 .concept-grid,
