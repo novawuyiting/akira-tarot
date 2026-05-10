@@ -334,6 +334,16 @@
       let currentLang = "zh";
       const languageButtons = document.querySelectorAll(".language-option");
 
+      function trackEvent(name, params = {}) {
+        if (typeof window.gtag !== "function") return;
+        window.gtag("event", name, {
+          language: currentLang,
+          page_path: window.location.pathname,
+          page_topic: "love_tarot_reading",
+          ...params,
+        });
+      }
+
       function setLanguage(lang) {
         currentLang = lang;
         document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
@@ -351,6 +361,15 @@
 
       languageButtons.forEach((button) => {
         button.addEventListener("click", () => setLanguage(button.dataset.lang));
+      });
+
+      document.querySelectorAll('a[href*="index.html#booking"]').forEach((link) => {
+        link.addEventListener("click", () => {
+          trackEvent("click_wechat_booking", {
+            source: "love_tarot_reading",
+            link_text: link.textContent.trim(),
+          });
+        });
       });
 
       setLanguage("zh");

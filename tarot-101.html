@@ -310,6 +310,16 @@
       let pageLang = "zh";
       const languageButtons = document.querySelectorAll(".language-option");
 
+      function trackEvent(name, params = {}) {
+        if (typeof window.gtag !== "function") return;
+        window.gtag("event", name, {
+          language: pageLang,
+          page_path: window.location.pathname,
+          page_topic: "tarot_101",
+          ...params,
+        });
+      }
+
       function setPageLanguage(lang) {
         pageLang = lang;
         document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
@@ -327,6 +337,15 @@
 
       languageButtons.forEach((button) => {
         button.addEventListener("click", () => setPageLanguage(button.dataset.lang));
+      });
+
+      document.querySelectorAll('a[href*="index.html#booking"]').forEach((link) => {
+        link.addEventListener("click", () => {
+          trackEvent("click_wechat_booking", {
+            source: "tarot_101",
+            link_text: link.textContent.trim(),
+          });
+        });
       });
 
       setPageLanguage("zh");

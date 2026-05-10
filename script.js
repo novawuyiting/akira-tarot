@@ -330,6 +330,15 @@ function t(key) {
   return translations[currentLang][key];
 }
 
+function trackEvent(name, params = {}) {
+  if (typeof window.gtag !== "function") return;
+  window.gtag("event", name, {
+    language: currentLang,
+    page_path: window.location.pathname,
+    ...params,
+  });
+}
+
 function setText(key, value) {
   document.querySelectorAll(`[data-i18n="${key}"]`).forEach((node) => {
     node.textContent = value;
@@ -480,6 +489,10 @@ function revealCard(button) {
   tarotButtons.forEach((item) => item.classList.remove("revealed"));
   button.classList.add("revealed");
   renderCard();
+  trackEvent("daily_card_draw", {
+    card_name: cards[currentLang][currentCardIndex][0],
+    song_title: spotifyTracks[currentSongIndex].title,
+  });
 }
 
 languageButtons.forEach((button) => {
@@ -500,10 +513,19 @@ previewButton?.addEventListener("click", () => {
     stopSongPreview();
     return;
   }
+  trackEvent("click_spotify_preview", {
+    song_title: spotifyTracks[currentSongIndex].title,
+  });
   playSongPreview();
 });
 
 songPreview?.addEventListener("ended", stopSongPreview);
+
+musicLink?.addEventListener("click", () => {
+  trackEvent("click_spotify_playlist", {
+    song_title: spotifyTracks[currentSongIndex].title,
+  });
+});
 
 tabs.forEach((tab) => {
   tab.addEventListener("click", () => {
@@ -521,6 +543,35 @@ tabs.forEach((tab) => {
 document.querySelectorAll("[data-service-key]").forEach((link) => {
   link.addEventListener("click", () => {
     setSessionByKey(link.dataset.serviceKey);
+    trackEvent("click_book_reading", {
+      service_key: link.dataset.serviceKey,
+    });
+  });
+});
+
+document.querySelectorAll('a[href="#booking"]').forEach((link) => {
+  if (link.dataset.serviceKey) return;
+  link.addEventListener("click", () => {
+    trackEvent("click_wechat_booking", {
+      source: "homepage_booking_link",
+      link_text: link.textContent.trim(),
+    });
+  });
+});
+
+document.querySelectorAll('a[href="love-tarot-reading.html"], a[href="career-tarot-reading.html"]').forEach((link) => {
+  link.addEventListener("click", () => {
+    trackEvent(link.getAttribute("href").includes("love") ? "click_love_reading_page" : "click_career_reading_page", {
+      link_text: link.textContent.trim(),
+    });
+  });
+});
+
+document.querySelectorAll('a[href="shop.html"]').forEach((link) => {
+  link.addEventListener("click", () => {
+    trackEvent("click_shop_page", {
+      link_text: link.textContent.trim(),
+    });
   });
 });
 
@@ -549,6 +600,9 @@ document.querySelector("#checkoutButton")?.addEventListener("click", () => {
   setSessionByKey("cards");
   currentNoteKey = "selectedProducts";
   renderNote();
+  trackEvent("click_shop_wechat", {
+    selected_products: cart.join(","),
+  });
   document.querySelector("#booking").scrollIntoView({ behavior: "smooth" });
 });
 
@@ -556,6 +610,9 @@ document.querySelector(".booking-form")?.addEventListener("submit", (event) => {
   event.preventDefault();
   currentNoteKey = "bookingSubmitted";
   renderNote();
+  trackEvent("booking_form_submit", {
+    service_key: sessionSelect?.dataset.selectedKey || "unknown",
+  });
 });
 
 setLanguage("zh");

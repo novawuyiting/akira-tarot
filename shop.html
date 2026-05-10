@@ -305,6 +305,15 @@
       const buyNowButton = document.querySelector("#buyNowButton");
       const copyWechatButton = document.querySelector("#copyWechatButton");
 
+      function trackEvent(name, params = {}) {
+        if (typeof window.gtag !== "function") return;
+        window.gtag("event", name, {
+          language: pageLang,
+          page_path: window.location.pathname,
+          ...params,
+        });
+      }
+
       function t(key) {
         return pageTranslations[pageLang][key];
       }
@@ -351,6 +360,10 @@
           }
           shopNote.textContent = "";
           renderCart();
+          trackEvent("click_shop_product_select", {
+            product_key: key,
+            selected: selectedProducts.has(key),
+          });
         });
       });
 
@@ -364,6 +377,9 @@
           .map((key) => productNames[pageLang][key])
           .join(pageLang === "zh" ? "、" : ", ");
         shopNote.textContent = `${t("orderPrefix")}${names}${t("orderSuffix")}`;
+        trackEvent("click_shop_wechat", {
+          selected_products: Array.from(selectedProducts).join(","),
+        });
         window.location.hash = "order";
       });
 
@@ -371,8 +387,14 @@
         try {
           await navigator.clipboard.writeText("yoyoran");
           shopNote.textContent = t("copyDone");
+          trackEvent("click_wechat_booking", {
+            source: "shop_copy_wechat",
+          });
         } catch {
           shopNote.textContent = t("copyFallback");
+          trackEvent("click_wechat_booking", {
+            source: "shop_copy_wechat_fallback",
+          });
         }
       });
 
