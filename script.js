@@ -47,6 +47,7 @@ const translations = {
     bookButton: "预约",
     loveReadingLink: "感情塔罗占卜 / Love Tarot Reading",
     careerReadingLink: "事业塔罗占卜 / Career Tarot Reading",
+    yesNoReadingLink: "是或否塔罗占卜 / Yes or No Tarot Reading",
     classesEyebrow: "塔罗课程",
     classesTitle: "塔罗牌教学：初级 / 中级 / 高级班。",
     tabBeginner: "初级班",
@@ -146,6 +147,7 @@ const translations = {
     bookButton: "Book",
     loveReadingLink: "Love Tarot Reading / 感情塔罗占卜",
     careerReadingLink: "Career Tarot Reading / 事业塔罗占卜",
+    yesNoReadingLink: "Yes or No Tarot Reading / 是或否塔罗占卜",
     classesEyebrow: "Tarot classes",
     classesTitle: "Tarot classes: beginner, intermediate, and advanced.",
     tabBeginner: "Beginner",
@@ -581,9 +583,15 @@ document.querySelectorAll("[data-email-booking]").forEach((link) => {
   });
 });
 
-document.querySelectorAll('a[href="love-tarot-reading.html"], a[href="career-tarot-reading.html"]').forEach((link) => {
+document.querySelectorAll('a[href="love-tarot-reading.html"], a[href="career-tarot-reading.html"], a[href="yes-or-no-tarot-reading.html"]').forEach((link) => {
   link.addEventListener("click", () => {
-    trackEvent(link.getAttribute("href").includes("love") ? "click_love_reading_page" : "click_career_reading_page", {
+    const href = link.getAttribute("href");
+    const eventName = href.includes("love")
+      ? "click_love_reading_page"
+      : href.includes("career")
+        ? "click_career_reading_page"
+        : "click_yes_no_reading_page";
+    trackEvent(eventName, {
       link_text: link.textContent.trim(),
     });
   });
