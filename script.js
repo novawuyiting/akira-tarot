@@ -15,6 +15,7 @@ const translations = {
     quickLevels: "初级 / 中级 / 高级",
     quickTeaching: "塔罗牌教学",
     quickWechat: "微信预约",
+    quickWechatAction: "点击获取",
     exploreEyebrow: "探索",
     exploreTitle: "先认识 AKIRA TAROT 背后的 Yoyo。",
     exploreAboutTitle: "认识 Yoyo",
@@ -76,10 +77,12 @@ const translations = {
     bookingMethod: "预约方式",
     requestPurchase: "咨询购买",
     bookingEyebrow: "预约",
-    bookingTitle: "预约请加微信 yoyoran，或发邮件给 Yoyo。",
+    bookingTitle: "预约请通过微信或邮件联系 Yoyo。",
     bookingCopy: "请说明您想预约的服务、问题方向与方便的时间。AKIRA TAROT 会为您安排咨询。",
     wechatBookingKicker: "微信预约",
+    wechatBookingTitle: "获取微信号",
     wechatBookingCopy: "适合快速确认时间与服务。",
+    wechatCopiedHint: "已显示微信号，请打开微信添加。",
     emailBookingKicker: "邮件预约",
     emailBookingCopy: "不方便使用微信时，可以直接发送邮件。",
     mailAppButton: "邮件 App",
@@ -96,8 +99,8 @@ const translations = {
     cartMethodSelected: "yoyoran",
     chooseCardFirst: "请先选择想了解的牌卡类型，再预约咨询。",
     selectedProductsPrefix: "已选择：",
-    selectedProductsSuffix: "。请加微信 yoyoran 预约。",
-    bookingSubmitted: "预约提示已生成。请添加微信 yoyoran，并发送您的预约项目与问题方向。",
+    selectedProductsSuffix: "。请点击微信预约获取微信号。",
+    bookingSubmitted: "预约提示已生成。请点击微信预约获取微信号，或直接使用邮件预约。",
   },
   en: {
     navAbout: "About",
@@ -115,6 +118,7 @@ const translations = {
     quickLevels: "Beginner / Intermediate / Advanced",
     quickTeaching: "Tarot classes",
     quickWechat: "Book on WeChat",
+    quickWechatAction: "Tap to get",
     exploreEyebrow: "Explore",
     exploreTitle: "Meet Yoyo behind AKIRA TAROT.",
     exploreAboutTitle: "Meet Yoyo",
@@ -179,7 +183,9 @@ const translations = {
     bookingTitle: "Book on WeChat or email Yoyo.",
     bookingCopy: "Share the service you want, your question theme, and your preferred time. AKIRA TAROT will help arrange your session.",
     wechatBookingKicker: "WeChat booking",
+    wechatBookingTitle: "Get WeChat ID",
     wechatBookingCopy: "Best for quick scheduling and service confirmation.",
+    wechatCopiedHint: "WeChat ID is shown. Open WeChat to add Yoyo.",
     emailBookingKicker: "Email booking",
     emailBookingCopy: "Prefer not to use WeChat? Send Yoyo an email directly.",
     mailAppButton: "Mail App",
@@ -196,8 +202,8 @@ const translations = {
     cartMethodSelected: "yoyoran",
     chooseCardFirst: "Choose a card type first, then request a purchase consultation.",
     selectedProductsPrefix: "Selected: ",
-    selectedProductsSuffix: ". Please book on WeChat: yoyoran.",
-    bookingSubmitted: "Booking note created. Please add WeChat yoyoran and send your service plus question focus.",
+    selectedProductsSuffix: ". Tap WeChat booking to get the WeChat ID.",
+    bookingSubmitted: "Booking note created. Tap WeChat booking to get the WeChat ID, or use email booking.",
   },
 };
 
@@ -580,6 +586,29 @@ document.querySelectorAll("[data-email-booking]").forEach((link) => {
       method: link.dataset.emailBooking,
       email: "yoyo.ranjing@gmail.com",
     });
+  });
+});
+
+document.querySelectorAll("[data-wechat-booking]").forEach((button) => {
+  button.addEventListener("click", async () => {
+    const reveal = button.querySelector(".wechat-reveal");
+    if (reveal) reveal.hidden = false;
+    trackEvent("click_wechat_booking", {
+      source: button.dataset.wechatBooking,
+      action_type: "reveal_wechat_id",
+    });
+    try {
+      await navigator.clipboard.writeText("yoyoran");
+      trackEvent("copy_wechat_id", {
+        source: button.dataset.wechatBooking,
+        copy_status: "success",
+      });
+    } catch {
+      trackEvent("copy_wechat_id", {
+        source: button.dataset.wechatBooking,
+        copy_status: "manual",
+      });
+    }
   });
 });
 

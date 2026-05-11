@@ -78,7 +78,7 @@
           </article>
           <article>
             <span>03</span>
-            <p data-i18n="stepThree">添加微信 yoyoran，发送选择内容，确认价格、库存与邮寄方式。</p>
+            <p data-i18n="stepThree">复制微信 ID 后，发送选择内容，确认价格、库存与邮寄方式。</p>
           </article>
         </div>
       </section>
@@ -152,7 +152,7 @@
             </ul>
             <div class="wechat-card">
               <span data-i18n="wechatIdLabel">微信 ID</span>
-              <strong>yoyoran</strong>
+              <strong id="shopWechatValue" data-i18n="wechatHidden">点击复制后显示</strong>
             </div>
             <button class="button primary wide" id="buyNowButton" type="button">
               <span class="icon send" aria-hidden="true"></span>
@@ -217,10 +217,11 @@
           orderTitle: "通过微信购买",
           cartEmpty: "还没有选择牌卡。",
           wechatIdLabel: "微信 ID",
+          wechatHidden: "点击复制后显示",
           buyNow: "Buy Now",
           copyWechat: "复制微信 ID",
           noSelection: "请先选择想购买的牌卡套组。",
-          orderPrefix: "请添加微信 yoyoran，并发送：我想购买 ",
+          orderPrefix: "请复制微信 ID，并发送：我想购买 ",
           orderSuffix: "。想确认价格、库存和邮寄方式。",
           copyDone: "已复制微信 ID：yoyoran",
           copyFallback: "微信 ID：yoyoran",
@@ -228,7 +229,7 @@
           howTitle: "购买流程很简单。",
           stepOne: "选择你感兴趣的牌卡套组。",
           stepTwo: "点击 Buy Now，页面会生成给 Yoyo 的购买提示。",
-          stepThree: "添加微信 yoyoran，发送选择内容，确认价格、库存与邮寄方式。",
+          stepThree: "复制微信 ID 后，发送选择内容，确认价格、库存与邮寄方式。",
         },
         en: {
           navAbout: "About",
@@ -266,10 +267,11 @@
           orderTitle: "Order through WeChat",
           cartEmpty: "No card set selected yet.",
           wechatIdLabel: "WeChat ID",
+          wechatHidden: "Shown after copy",
           buyNow: "Buy Now",
           copyWechat: "Copy WeChat ID",
           noSelection: "Please select a card set first.",
-          orderPrefix: "Please add WeChat yoyoran and send: I want to order ",
+          orderPrefix: "Please copy the WeChat ID and send: I want to order ",
           orderSuffix: ". I would like to confirm price, availability, and shipping.",
           copyDone: "Copied WeChat ID: yoyoran",
           copyFallback: "WeChat ID: yoyoran",
@@ -277,7 +279,7 @@
           howTitle: "The order flow is simple.",
           stepOne: "Choose the card set you are interested in.",
           stepTwo: "Click Buy Now and the page will prepare a message for Yoyo.",
-          stepThree: "Add WeChat yoyoran, send your selection, then confirm price, stock, and shipping.",
+          stepThree: "Copy the WeChat ID, send your selection, then confirm price, stock, and shipping.",
         },
       };
 
@@ -304,6 +306,7 @@
       const shopNote = document.querySelector("#shopNote");
       const buyNowButton = document.querySelector("#buyNowButton");
       const copyWechatButton = document.querySelector("#copyWechatButton");
+      const shopWechatValue = document.querySelector("#shopWechatValue");
 
       function trackEvent(name, params = {}) {
         if (typeof window.gtag !== "function") return;
@@ -386,14 +389,18 @@
       copyWechatButton.addEventListener("click", async () => {
         try {
           await navigator.clipboard.writeText("yoyoran");
+          shopWechatValue.textContent = "yoyoran";
           shopNote.textContent = t("copyDone");
-          trackEvent("click_wechat_booking", {
+          trackEvent("copy_wechat_id", {
             source: "shop_copy_wechat",
+            copy_status: "success",
           });
         } catch {
+          shopWechatValue.textContent = "yoyoran";
           shopNote.textContent = t("copyFallback");
-          trackEvent("click_wechat_booking", {
+          trackEvent("copy_wechat_id", {
             source: "shop_copy_wechat_fallback",
+            copy_status: "manual",
           });
         }
       });

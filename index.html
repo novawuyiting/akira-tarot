@@ -9,7 +9,7 @@
       content="AKIRA TAROT 晶晶塔罗 offers tarot readings, consultation, healing, tarot classes, Tarot 101 learning, and curated tarot cards by appointment on WeChat."
     />
     <link rel="preload" as="image" href="assets/banner-cat-tarot.jpg" />
-    <link rel="stylesheet" href="styles.css?v=20260510-email" />
+    <link rel="stylesheet" href="styles.css?v=20260511-funnel" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1RH16YD3JB"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -78,7 +78,7 @@
         </div>
         <div>
           <span data-i18n="quickWechat">微信预约</span>
-          <strong>yoyoran</strong>
+          <strong data-i18n="quickWechatAction">点击获取</strong>
         </div>
       </section>
 
@@ -248,16 +248,20 @@
       <section id="booking" class="booking-section">
         <div class="booking-copy">
           <p class="eyebrow" data-i18n="bookingEyebrow">Booking</p>
-          <h2 data-i18n="bookingTitle">预约请加微信 yoyoran，或发邮件给 Yoyo。</h2>
+          <h2 data-i18n="bookingTitle">预约请通过微信或邮件联系 Yoyo。</h2>
           <p data-i18n="bookingCopy">
             请说明您想预约的服务、问题方向与方便的时间。AKIRA TAROT 会为您安排咨询。
           </p>
           <div class="booking-contact-options" aria-label="Booking contact options">
-            <a class="booking-contact-card" href="#booking">
+            <button class="booking-contact-card" type="button" data-wechat-booking="homepage_booking">
               <span class="contact-kicker" data-i18n="wechatBookingKicker">微信预约</span>
-              <strong>yoyoran</strong>
+              <strong data-i18n="wechatBookingTitle">获取微信号</strong>
               <span data-i18n="wechatBookingCopy">适合快速确认时间与服务。</span>
-            </a>
+              <span class="wechat-reveal" id="homepageWechatReveal" hidden>
+                <b>yoyoran</b>
+                <small data-i18n="wechatCopiedHint">已显示微信号，请打开微信添加。</small>
+              </span>
+            </button>
             <div class="booking-contact-card email-card">
               <span class="contact-kicker" data-i18n="emailBookingKicker">邮件预约</span>
               <strong>yoyo.ranjing@gmail.com</strong>
@@ -354,6 +358,6 @@
       </div>
     </footer>
 
-    <script src="script.js?v=20260510-email"></script>
+    <script src="script.js?v=20260511-funnel"></script>
   </body>
 </html>
