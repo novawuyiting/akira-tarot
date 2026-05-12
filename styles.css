@@ -984,6 +984,49 @@ section:not(.hero):not(.quick-strip) {
   width: 100%;
 }
 
+.free-reading-promo {
+  display: grid;
+  grid-template-columns: minmax(0, 0.5fr) minmax(0, 1.2fr) auto;
+  gap: 18px;
+  align-items: center;
+  margin: 0 0 18px;
+  padding: 18px 20px;
+  border: 1px solid rgba(255, 114, 173, 0.28);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 92% 20%, rgba(197, 160, 255, 0.18), transparent 28%),
+    rgba(255, 247, 241, 0.88);
+  box-shadow: 0 18px 42px rgba(42, 16, 40, 0.08);
+}
+
+.free-reading-promo span,
+.free-reading-promo em {
+  color: var(--pink);
+  font-size: 0.78rem;
+  font-style: normal;
+  font-weight: 820;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.free-reading-promo strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.08rem, 2vw, 1.35rem);
+  font-weight: 500;
+}
+
+.free-reading-promo em {
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 14px;
+  border: 1px solid rgba(42, 16, 40, 0.14);
+  border-radius: 999px;
+  color: var(--ink);
+  background: rgba(255, 114, 173, 0.18);
+}
+
 .topic-link-strip {
   display: flex;
   flex-wrap: wrap;
@@ -1389,6 +1432,208 @@ footer div {
   color: rgba(255, 250, 242, 0.76);
 }
 
+.free-reading-hero {
+  background:
+    linear-gradient(90deg, rgba(22, 9, 22, 0.9), rgba(42, 16, 40, 0.42)),
+    radial-gradient(circle at 82% 22%, rgba(255, 114, 173, 0.5), transparent 24%),
+    radial-gradient(circle at 72% 74%, rgba(197, 160, 255, 0.5), transparent 30%),
+    linear-gradient(135deg, #160916, #3b1637 58%, #ff72ad);
+}
+
+.free-reading-tool {
+  background:
+    radial-gradient(circle at 12% 14%, rgba(255, 114, 173, 0.15), transparent 28%),
+    #fff7f1;
+}
+
+.free-reading-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+  gap: clamp(20px, 4vw, 44px);
+  align-items: start;
+}
+
+.free-reading-form,
+.free-reading-result {
+  border: 1px solid rgba(42, 16, 40, 0.12);
+  border-radius: 22px;
+  background: rgba(255, 247, 241, 0.9);
+  box-shadow: 0 22px 56px rgba(42, 16, 40, 0.1);
+}
+
+.free-reading-form {
+  display: grid;
+  gap: 18px;
+  padding: clamp(22px, 4vw, 34px);
+}
+
+.free-reading-form fieldset {
+  min-width: 0;
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.free-reading-form legend,
+.question-field > span {
+  color: var(--soft-ink);
+  font-size: 0.9rem;
+  font-weight: 760;
+}
+
+.topic-picker,
+.spread-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.topic-picker label,
+.spread-picker label {
+  display: block;
+  color: var(--ink);
+  font-size: 0.92rem;
+}
+
+.topic-picker input,
+.spread-picker input {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.topic-picker span,
+.spread-picker span {
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 14px;
+  border: 1px solid rgba(42, 16, 40, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.46);
+  cursor: pointer;
+  transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.topic-picker input:checked + span,
+.spread-picker input:checked + span {
+  border-color: var(--pink);
+  background: rgba(255, 114, 173, 0.18);
+  color: var(--ink);
+  font-weight: 820;
+}
+
+.free-reading-result {
+  display: grid;
+  gap: 18px;
+  padding: clamp(22px, 4vw, 34px);
+}
+
+.mini-card-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(72px, 1fr));
+  gap: 12px;
+}
+
+.mini-tarot-card {
+  min-height: 176px;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid rgba(255, 247, 241, 0.28);
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255, 114, 173, 0.2), transparent 28%),
+    linear-gradient(150deg, #3b1637, #171018);
+  color: var(--surface);
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.18);
+  text-align: center;
+}
+
+.mini-tarot-card > span:empty {
+  width: 48%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 250, 242, 0.72);
+  border-radius: 50%;
+}
+
+.mini-tarot-card.revealed {
+  background:
+    radial-gradient(circle at 50% 24%, rgba(255, 114, 173, 0.34), transparent 27%),
+    linear-gradient(180deg, #fff0f8, #c5a0ff);
+  color: var(--ink);
+}
+
+.mini-tarot-card.revealed span {
+  color: var(--rose);
+  font-size: 0.72rem;
+  font-weight: 860;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.mini-tarot-card.revealed strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1rem, 2vw, 1.28rem);
+  font-weight: 500;
+}
+
+.result-copy {
+  display: grid;
+  gap: 14px;
+}
+
+.result-copy p {
+  margin: 0;
+  color: var(--soft-ink);
+}
+
+.result-message-list {
+  display: grid;
+  gap: 10px;
+}
+
+.result-message-list article {
+  display: grid;
+  gap: 5px;
+  padding: 14px;
+  border: 1px solid rgba(42, 16, 40, 0.12);
+  border-radius: 16px;
+  background: rgba(255, 233, 244, 0.55);
+}
+
+.result-message-list span {
+  color: var(--pink);
+  font-size: 0.72rem;
+  font-weight: 860;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.result-message-list strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.08rem;
+  font-weight: 500;
+}
+
+.free-reading-cta .cta-contact-options {
+  max-width: 780px;
+  margin-top: 28px;
+}
+
+.free-reading-cta .booking-contact-card {
+  background:
+    radial-gradient(circle at 92% 12%, rgba(255, 114, 173, 0.16), transparent 30%),
+    rgba(255, 247, 241, 0.94);
+}
+
 .about-hero {
   grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.72fr);
   gap: clamp(28px, 6vw, 72px);
@@ -1693,6 +1938,7 @@ footer div {
   .concept-grid,
   .faq-grid,
   .spread-demo,
+  .free-reading-layout,
   .about-hero,
   .about-story,
   .about-card-grid,
@@ -1720,6 +1966,11 @@ footer div {
 
   .home-shop-preview .product-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .free-reading-promo {
+    grid-template-columns: 1fr;
+    align-items: start;
   }
 }
 
@@ -1792,6 +2043,14 @@ footer div {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .mini-card-row {
+    grid-template-columns: 1fr;
+  }
+
+  .mini-tarot-card {
+    min-height: 148px;
+  }
+
   .lesson-panel {
     display: grid;
   }
@@ -1804,4 +2063,691 @@ footer div {
     min-height: 70vh;
     padding-top: 170px;
   }
+}
+
+/* Homepage UI refresh V1: Midnight Fashion Oracle */
+body.home-page {
+  color-scheme: dark;
+  --paper: #050207;
+  --surface: #fff7ff;
+  --ink: #fff7ff;
+  --soft-ink: #cdbfd4;
+  --muted: #9f8aa9;
+  --line: rgba(255, 255, 255, 0.13);
+  --rose: #ff4fb8;
+  --pink: #ff4fb8;
+  --lilac: #8b5cf6;
+  --plum: #120816;
+  --deep-plum: #050207;
+  --tea: #c4a7e7;
+  --gold: #ff4fb8;
+  --charcoal: #050207;
+  --shadow: 0 28px 80px rgba(0, 0, 0, 0.34);
+  background:
+    radial-gradient(circle at 12% 10%, rgba(255, 79, 184, 0.16), transparent 28%),
+    radial-gradient(circle at 88% 18%, rgba(124, 58, 237, 0.2), transparent 30%),
+    linear-gradient(180deg, #050207 0%, #0d0613 42%, #050207 100%);
+  color: var(--surface);
+}
+
+.home-page .site-header {
+  position: fixed;
+  top: 16px;
+  right: auto;
+  left: 50%;
+  width: min(1180px, calc(100% - 32px));
+  min-height: 72px;
+  padding: 12px 14px 12px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  background: rgba(5, 2, 7, 0.78);
+  color: #fff7ff;
+  box-shadow: 0 18px 70px rgba(0, 0, 0, 0.28);
+  transform: translateX(-50%);
+}
+
+.home-page .brand {
+  letter-spacing: 0;
+}
+
+.home-page .brand-mark {
+  width: 18px;
+  height: 18px;
+  border: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--pink), var(--lilac));
+  box-shadow: 0 0 24px rgba(255, 79, 184, 0.45);
+}
+
+.home-page nav {
+  color: rgba(255, 247, 255, 0.78);
+}
+
+.home-page nav a:hover {
+  color: #ffffff;
+}
+
+.home-page .language-toggle {
+  border-color: rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.home-page .language-option {
+  color: rgba(255, 247, 255, 0.78);
+}
+
+.home-page .language-option.active {
+  background: var(--pink);
+  color: #050207;
+  font-weight: 850;
+}
+
+.home-page .hero {
+  min-height: 100vh;
+  grid-template-columns: minmax(0, 1.02fr) minmax(340px, 0.82fr);
+  gap: clamp(38px, 5vw, 72px);
+  padding: 132px clamp(20px, 7vw, 96px) 72px;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.17), transparent 28%),
+    #050207;
+  color: #fff7ff;
+}
+
+.home-page .hero::before,
+.home-page .hero::after {
+  display: none;
+}
+
+.home-page .hero-copy {
+  max-width: 680px;
+}
+
+.home-page .eyebrow,
+.home-page .panel-label,
+.home-page .service-card > p,
+.home-page .product-card > p {
+  color: var(--pink);
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.14em;
+}
+
+.home-page h1 {
+  max-width: 10.5ch;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: clamp(4.8rem, 9.6vw, 8.8rem);
+  font-weight: 900;
+  line-height: 0.88;
+  text-transform: uppercase;
+}
+
+.home-page h1 span {
+  margin-top: 12px;
+  color: var(--pink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: clamp(2.5rem, 5.4vw, 4.8rem);
+  font-weight: 900;
+}
+
+.home-page h2,
+.home-page h3 {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-weight: 850;
+}
+
+.home-page h2 {
+  font-size: clamp(2.25rem, 5vw, 4.35rem);
+  line-height: 1;
+}
+
+.home-page .hero-copy > p:last-of-type {
+  max-width: 34rem;
+  color: rgba(255, 247, 255, 0.78);
+  font-size: clamp(1.05rem, 1.7vw, 1.28rem);
+  line-height: 1.75;
+}
+
+.home-page .hero-actions {
+  gap: 12px;
+}
+
+.home-page .button {
+  min-height: 48px;
+  border-color: rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  padding: 0 22px;
+  font-weight: 850;
+}
+
+.home-page .button.primary,
+.home-page .hero .button.primary,
+.home-page .preview-button {
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--pink), var(--lilac));
+  color: #050207;
+  box-shadow: 0 18px 44px rgba(255, 79, 184, 0.24);
+}
+
+.home-page .button.secondary,
+.home-page .button.ghost,
+.home-page .card-button,
+.home-page .product-button,
+.home-page .hero .button.secondary {
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.045);
+  color: #fff7ff;
+}
+
+.home-page .button:hover,
+.home-page .preview-button:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 79, 184, 0.72);
+}
+
+.home-page .hero-art {
+  min-height: min(62vw, 620px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-page .hero-photo-card {
+  position: relative;
+  right: auto;
+  bottom: auto;
+  width: min(100%, 560px);
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 4 / 5;
+  padding: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.42);
+  transform: rotate(2deg);
+}
+
+.home-page .hero-photo-card img {
+  border-radius: 6px;
+  filter: saturate(0.98) contrast(1.04);
+}
+
+.home-page .hero-star {
+  background: rgba(255, 247, 255, 0.72);
+  box-shadow: 0 0 18px rgba(255, 79, 184, 0.48);
+}
+
+.home-page .quick-strip {
+  width: min(1180px, calc(100% - 32px));
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.home-page .quick-strip div {
+  padding: 24px;
+  border-right-color: rgba(255, 255, 255, 0.13);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.home-page .quick-strip span {
+  color: rgba(255, 247, 255, 0.62);
+}
+
+.home-page .quick-strip strong {
+  color: #fff7ff;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 1.38rem;
+  font-weight: 850;
+}
+
+.home-page section:not(.hero):not(.quick-strip) {
+  padding: clamp(74px, 8vw, 112px) max(clamp(20px, 7vw, 96px), calc((100vw - 1180px) / 2));
+}
+
+.home-page .explore-section,
+.home-page .draw-section,
+.home-page .readings-section,
+.home-page .shop-section,
+.home-page .booking-section,
+.home-page .article-links-section {
+  background: transparent;
+}
+
+.home-page .section-intro {
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: minmax(150px, 0.42fr) minmax(0, 1fr);
+  gap: 32px;
+  align-items: end;
+  margin-bottom: 34px;
+}
+
+.home-page .section-intro p:last-child,
+.home-page .booking-copy p:last-child,
+.home-page .reading-panel p:not(.panel-label),
+.home-page .lesson-panel p:not(.panel-label),
+.home-page .explore-card p,
+.home-page .service-card ul,
+.home-page .product-card span,
+.home-page .booking-contact-card span:not(.contact-kicker),
+.home-page label {
+  color: var(--soft-ink);
+}
+
+.home-page .reading-panel,
+.home-page .booking-form,
+.home-page .service-card,
+.home-page .product-card,
+.home-page .explore-card,
+.home-page .deck-stage,
+.home-page .booking-contact-card,
+.home-page .free-reading-promo {
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 8px;
+  background: rgba(18, 8, 22, 0.82);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+}
+
+.home-page .feature-explore-card {
+  grid-template-columns: minmax(240px, 0.55fr) minmax(0, 1fr);
+  gap: 34px;
+  padding: 18px;
+}
+
+.home-page .feature-explore-card img,
+.home-page .product-art {
+  border-color: rgba(255, 255, 255, 0.13);
+  border-radius: 6px;
+}
+
+.home-page .feature-explore-card strong,
+.home-page .service-card span,
+.home-page .product-card span,
+.home-page .topic-link-strip a,
+.home-page .music-link,
+.home-page .contact-kicker,
+.home-page .wechat-reveal b {
+  color: var(--pink);
+}
+
+.home-page .draw-layout,
+.home-page .booking-section {
+  grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
+}
+
+.home-page .deck-stage {
+  min-height: 430px;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(255, 79, 184, 0.18), transparent 34%),
+    rgba(18, 8, 22, 0.82);
+}
+
+.home-page .tarot-card {
+  border-color: rgba(255, 247, 255, 0.28);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.12), transparent),
+    repeating-linear-gradient(45deg, transparent 0 9px, rgba(255, 255, 255, 0.07) 9px 10px),
+    linear-gradient(145deg, #7c3aed, #ff4fb8);
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.45);
+}
+
+.home-page .tarot-card.revealed {
+  background:
+    radial-gradient(circle at 50% 30%, rgba(255, 79, 184, 0.3), transparent 27%),
+    linear-gradient(180deg, #fff0f8, #c5a0ff);
+  color: #171018;
+}
+
+.home-page .reading-panel h3,
+.home-page .music-pairing h4,
+.home-page .service-card h3,
+.home-page .product-card h3,
+.home-page .booking-copy h2 {
+  color: #fff7ff;
+}
+
+.home-page .music-pairing,
+.home-page .song-prescription,
+.home-page .wechat-reveal {
+  border-color: rgba(255, 255, 255, 0.13);
+}
+
+.home-page .song-prescription,
+.home-page .email-card {
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.home-page .song-prescription strong,
+.home-page .booking-contact-card strong,
+.home-page .free-reading-promo strong {
+  color: #fff7ff;
+}
+
+.home-page .preview-button.is-playing {
+  border-color: rgba(255, 255, 255, 0.16);
+  background: transparent;
+  color: #fff7ff;
+}
+
+.home-page .service-grid {
+  gap: 18px;
+}
+
+.home-page .service-card,
+.home-page .product-card {
+  padding: 24px;
+}
+
+.home-page .service-card.featured {
+  border-color: rgba(255, 79, 184, 0.58);
+  background:
+    radial-gradient(circle at 88% 12%, rgba(255, 79, 184, 0.18), transparent 28%),
+    rgba(27, 11, 37, 0.9);
+}
+
+.home-page .product-art {
+  aspect-ratio: 4 / 5;
+  background: #120816;
+}
+
+.home-page .free-reading-promo {
+  grid-template-columns: minmax(0, 0.48fr) minmax(0, 1.2fr) auto;
+  margin-bottom: 20px;
+  background:
+    radial-gradient(circle at 92% 20%, rgba(124, 58, 237, 0.2), transparent 28%),
+    rgba(18, 8, 22, 0.82);
+}
+
+.home-page .free-reading-promo em {
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 79, 184, 0.14);
+  color: #fff7ff;
+}
+
+.home-page .booking-contact-card {
+  color: #fff7ff;
+}
+
+.home-page .booking-contact-card:hover,
+.home-page .booking-contact-card:focus-visible,
+.home-page .booking-contact-card:focus-within {
+  border-color: rgba(255, 79, 184, 0.62);
+  box-shadow: 0 28px 76px rgba(0, 0, 0, 0.34);
+}
+
+.home-page .email-action {
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff7ff;
+}
+
+.home-page input,
+.home-page select,
+.home-page textarea {
+  border-color: rgba(255, 255, 255, 0.13);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.055);
+  color: #fff7ff;
+}
+
+.home-page input::placeholder,
+.home-page textarea::placeholder {
+  color: rgba(255, 247, 255, 0.42);
+}
+
+.home-page input:focus,
+.home-page select:focus,
+.home-page textarea:focus {
+  border-color: rgba(255, 79, 184, 0.82);
+  box-shadow: 0 0 0 3px rgba(255, 79, 184, 0.16);
+}
+
+.home-page .topic-link-strip a {
+  border-color: rgba(255, 255, 255, 0.13);
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.home-page .more-articles summary {
+  border-color: rgba(255, 255, 255, 0.13);
+  background: rgba(255, 255, 255, 0.07);
+  color: #fff7ff;
+}
+
+.home-page footer {
+  background: #050207;
+  border-top: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+@media (max-width: 900px) {
+  .home-page .site-header {
+    position: absolute;
+    align-items: flex-start;
+  }
+
+  .home-page .hero,
+  .home-page .draw-layout,
+  .home-page .booking-section,
+  .home-page .section-intro,
+  .home-page .feature-explore-card,
+  .home-page .quick-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .home-page .hero {
+    padding-top: 150px;
+  }
+
+  .home-page .hero-art {
+    min-height: auto;
+  }
+
+  .home-page .hero-photo-card {
+    width: min(100%, 620px);
+  }
+
+  .home-page .quick-strip div {
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+  }
+}
+
+@media (max-width: 620px) {
+  .home-page .site-header {
+    width: calc(100% - 20px);
+  }
+
+  .home-page nav {
+    display: none;
+  }
+
+  .home-page h1 {
+    font-size: clamp(3.15rem, 14vw, 4.8rem);
+  }
+
+  .home-page h1 span {
+    font-size: clamp(1.9rem, 8vw, 2.7rem);
+  }
+
+  .home-page .hero {
+    padding-inline: 18px;
+  }
+
+  .home-page .hero-actions .button {
+    flex: 1 1 auto;
+  }
+
+  .home-page .deck-stage {
+    min-height: 300px;
+  }
+
+  .home-page .free-reading-promo,
+  .home-page .booking-contact-options {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Homepage UI refresh V1.1: typography rhythm */
+.home-page {
+  line-height: 1.55;
+}
+
+.home-page h1,
+.home-page h2,
+.home-page h3,
+.home-page h4,
+.home-page .brand,
+.home-page .button,
+.home-page .preview-button,
+.home-page .language-option,
+.home-page .topic-link-strip a,
+.home-page .more-articles summary {
+  line-height: 1.08;
+}
+
+.home-page h1 {
+  line-height: 0.9;
+}
+
+.home-page h1 span {
+  line-height: 0.98;
+}
+
+.home-page h2,
+.home-page .booking-copy h2 {
+  line-height: 1.04;
+}
+
+.home-page h3,
+.home-page .music-pairing h4,
+.home-page .service-card h3,
+.home-page .product-card h3 {
+  line-height: 1.12;
+}
+
+.home-page p,
+.home-page li,
+.home-page .reading-panel p:not(.panel-label),
+.home-page .lesson-panel p:not(.panel-label),
+.home-page .explore-card p,
+.home-page .booking-copy > p:not(.eyebrow),
+.home-page .booking-contact-card span:not(.contact-kicker),
+.home-page .product-card span,
+.home-page .form-note {
+  line-height: 1.72;
+}
+
+.home-page .hero-copy > p:last-of-type {
+  line-height: 1.68;
+}
+
+.home-page .eyebrow,
+.home-page .panel-label,
+.home-page .service-card > p,
+.home-page .product-card > p,
+.home-page .contact-kicker,
+.home-page .free-reading-promo span,
+.home-page .free-reading-promo em,
+.home-page .song-prescription span {
+  line-height: 1.25;
+}
+
+.home-page .service-card ul {
+  line-height: 1.72;
+}
+
+.home-page .service-card li + li {
+  margin-top: 10px;
+}
+
+.home-page .music-pairing {
+  gap: 12px;
+}
+
+.home-page .song-prescription {
+  gap: 4px;
+}
+
+.home-page label {
+  line-height: 1.35;
+}
+
+.home-page input,
+.home-page select,
+.home-page textarea {
+  line-height: 1.45;
+}
+
+.home-page .quick-strip span {
+  line-height: 1.35;
+}
+
+.home-page .quick-strip strong {
+  line-height: 1.12;
+}
+
+.home-page footer,
+.home-page footer div {
+  line-height: 1.35;
+}
+
+@media (max-width: 620px) {
+  .home-page p,
+  .home-page li,
+  .home-page .hero-copy > p:last-of-type,
+  .home-page .reading-panel p:not(.panel-label),
+  .home-page .explore-card p,
+  .home-page .booking-copy > p:not(.eyebrow),
+  .home-page .booking-contact-card span:not(.contact-kicker) {
+    line-height: 1.78;
+  }
+
+  .home-page h1 {
+    line-height: 0.92;
+  }
+
+  .home-page h2,
+  .home-page .booking-copy h2 {
+    line-height: 1.08;
+  }
+}
+
+/* Homepage UI refresh V1.2: unified font family */
+.home-page {
+  --home-font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: var(--home-font);
+}
+
+.home-page h1,
+.home-page h1 span,
+.home-page h2,
+.home-page h3,
+.home-page h4,
+.home-page p,
+.home-page a,
+.home-page button,
+.home-page input,
+.home-page select,
+.home-page textarea,
+.home-page label,
+.home-page strong,
+.home-page em,
+.home-page span,
+.home-page small,
+.home-page li,
+.home-page .brand,
+.home-page .quick-strip strong,
+.home-page .music-pairing h4,
+.home-page .song-prescription strong,
+.home-page .service-card h3,
+.home-page .product-card h3,
+.home-page .free-reading-promo strong,
+.home-page .booking-copy h2,
+.home-page footer p {
+  font-family: var(--home-font);
 }

@@ -10,6 +10,7 @@ const translations = {
     heroCopy: "用心为您“牌”忧解惑，趋利避害，走向更好的未来。",
     heroBook: "预约咨询",
     heroDraw: "抽一张牌",
+    heroFreeReading: "免费抽牌",
     quickTime: "20 / 30 / 60分钟",
     quickReading: "占卜咨询",
     quickLevels: "初级 / 中级 / 高级",
@@ -32,6 +33,9 @@ const translations = {
     previewStop: "停止试听",
     servicesEyebrow: "服务",
     servicesTitle: "选择适合您的咨询方式。",
+    freeReadingPromoKicker: "免费迷你占卜",
+    freeReadingPromoTitle: "先免费抽 1 或 3 张牌，再决定是否预约 Yoyo。",
+    freeReadingPromoCta: "开始抽牌",
     serviceType: "占卜 咨询 疗愈",
     service20Title: "20分钟",
     service20One: "适合单一问题",
@@ -113,6 +117,7 @@ const translations = {
     heroCopy: "Heart-centered readings to clarify worries, avoid missteps, and move toward a better future.",
     heroBook: "Book a Reading",
     heroDraw: "Draw a Card",
+    heroFreeReading: "Free Reading",
     quickTime: "20 / 30 / 60 min",
     quickReading: "Tarot readings",
     quickLevels: "Beginner / Intermediate / Advanced",
@@ -135,6 +140,9 @@ const translations = {
     previewStop: "Stop Preview",
     servicesEyebrow: "Services",
     servicesTitle: "Choose the reading style that fits your question.",
+    freeReadingPromoKicker: "Free mini reading",
+    freeReadingPromoTitle: "Try a free 1-card or 3-card reading before booking Yoyo.",
+    freeReadingPromoCta: "Start Reading",
     serviceType: "Reading · Consultation · Healing",
     service20Title: "20 minutes",
     service20One: "Best for one focused question",
@@ -629,6 +637,15 @@ document.querySelectorAll('a[href="love-tarot-reading.html"], a[href="career-tar
 document.querySelectorAll('a[href="shop.html"]').forEach((link) => {
   link.addEventListener("click", () => {
     trackEvent("click_shop_page", {
+      link_text: link.textContent.trim(),
+    });
+  });
+});
+
+document.querySelectorAll("[data-free-reading-link]").forEach((link) => {
+  link.addEventListener("click", () => {
+    trackEvent("click_free_tarot_reading", {
+      cta_location: `homepage_${link.dataset.freeReadingLink}`,
       link_text: link.textContent.trim(),
     });
   });

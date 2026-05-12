@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Free Tarot Reading | 免费塔罗抽牌 | AKIRA TAROT</title>
+    <meta
+      name="description"
+      content="Try a free online tarot reading with AKIRA TAROT. Choose your topic, ask a question, draw 1 or 3 cards, then book Yoyo for a personal reading on WeChat or email."
+    />
+    <link rel="stylesheet" href="styles.css?v=20260512-free-reading" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1RH16YD3JB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-1RH16YD3JB");
+    </script>
+  </head>
+  <body class="subpage free-reading-page">
+    <header class="site-header" aria-label="Primary navigation">
+      <a class="brand" href="index.html" aria-label="AKIRA TAROT home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        🔮 AKIRA TAROT
+      </a>
+      <div class="header-actions">
+        <nav>
+          <a href="index.html#readings" data-text-zh="服务" data-text-en="Services">服务</a>
+          <a href="about.html" data-text-zh="关于" data-text-en="About">关于</a>
+          <a href="tarot-101.html" data-text-zh="塔罗101" data-text-en="Tarot 101">塔罗101</a>
+          <a href="shop.html" data-text-zh="商店" data-text-en="Shop">商店</a>
+          <a href="index.html#booking" data-text-zh="预约" data-text-en="Book">预约</a>
+        </nav>
+        <div class="language-toggle" aria-label="Language setting">
+          <button class="language-option active" type="button" data-lang="zh" aria-pressed="true">中文</button>
+          <button class="language-option" type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="subpage-hero free-reading-hero">
+        <div class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">AKIRA TAROT</a>
+          <span>/</span>
+          <span data-text-zh="免费塔罗抽牌" data-text-en="Free Tarot Reading">免费塔罗抽牌</span>
+        </div>
+        <p class="eyebrow" data-text-zh="Free mini reading" data-text-en="Free mini reading">Free mini reading</p>
+        <h1 data-text-zh="先抽一组牌，听听此刻的指引。" data-text-en="Draw a small spread for the guidance you need now.">先抽一组牌，听听此刻的指引。</h1>
+        <p data-text-zh="选择主题，写下你的问题，抽 1 张或 3 张牌。结果适合当作温柔提醒；如果你想看得更细，可以继续预约 Yoyo 做个人解读。" data-text-en="Choose a topic, write your question, and draw 1 or 3 cards. Use this as a gentle reflection; when you want a deeper personal reading, book Yoyo for the next layer.">
+          选择主题，写下你的问题，抽 1 张或 3 张牌。结果适合当作温柔提醒；如果你想看得更细，可以继续预约 Yoyo 做个人解读。
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#free-reading-tool">
+            <span class="icon spark" aria-hidden="true"></span>
+            <span data-text-zh="开始免费抽牌" data-text-en="Start Free Reading">开始免费抽牌</span>
+          </a>
+          <a class="button secondary" href="#book-yoyo">
+            <span class="icon calendar" aria-hidden="true"></span>
+            <span data-text-zh="预约 Yoyo" data-text-en="Book Yoyo">预约 Yoyo</span>
+          </a>
+        </div>
+      </section>
+
+      <section id="free-reading-tool" class="content-band free-reading-tool">
+        <div class="section-intro">
+          <p class="eyebrow" data-text-zh="Ask clearly" data-text-en="Ask clearly">Ask clearly</p>
+          <h2 data-text-zh="把问题交给牌，也把选择权留给自己。" data-text-en="Bring the question to the cards. Keep the choice with yourself.">把问题交给牌，也把选择权留给自己。</h2>
+        </div>
+
+        <div class="free-reading-layout">
+          <form class="free-reading-form" id="freeReadingForm">
+            <fieldset>
+              <legend data-text-zh="选择主题" data-text-en="Choose a topic">选择主题</legend>
+              <div class="topic-picker" role="radiogroup" aria-label="Reading topic">
+                <label>
+                  <input type="radio" name="topic" value="love" checked />
+                  <span data-text-zh="感情" data-text-en="Love">感情</span>
+                </label>
+                <label>
+                  <input type="radio" name="topic" value="career" />
+                  <span data-text-zh="事业" data-text-en="Career">事业</span>
+                </label>
+                <label>
+                  <input type="radio" name="topic" value="relationship" />
+                  <span data-text-zh="关系" data-text-en="Relationship">关系</span>
+                </label>
+                <label>
+                  <input type="radio" name="topic" value="choice" />
+                  <span data-text-zh="选择" data-text-en="Decision">选择</span>
+                </label>
+                <label>
+                  <input type="radio" name="topic" value="healing" />
+                  <span data-text-zh="疗愈" data-text-en="Healing">疗愈</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <label class="question-field">
+              <span data-text-zh="写下你的问题" data-text-en="Write your question">写下你的问题</span>
+              <textarea
+                id="readingQuestion"
+                name="question"
+                rows="4"
+                maxlength="220"
+                required
+                data-placeholder-zh="例如：这段关系下一步我应该注意什么？"
+                data-placeholder-en="Example: What should I pay attention to in this relationship now?"
+                placeholder="例如：这段关系下一步我应该注意什么？"
+              ></textarea>
+            </label>
+
+            <fieldset>
+              <legend data-text-zh="选择牌阵" data-text-en="Choose a spread">选择牌阵</legend>
+              <div class="spread-picker" role="radiogroup" aria-label="Reading spread">
+                <label>
+                  <input type="radio" name="spread" value="1" checked />
+                  <span data-text-zh="1 张牌：快速提示" data-text-en="1 card: quick message">1 张牌：快速提示</span>
+                </label>
+                <label>
+                  <input type="radio" name="spread" value="3" />
+                  <span data-text-zh="3 张牌：现状 / 阻碍 / 建议" data-text-en="3 cards: current / block / advice">3 张牌：现状 / 阻碍 / 建议</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <button class="button primary wide" type="submit">
+              <span class="icon spark" aria-hidden="true"></span>
+              <span data-text-zh="抽牌看结果" data-text-en="Draw Cards">抽牌看结果</span>
+            </button>
+            <p class="form-note" id="readingFormNote" role="status"></p>
+          </form>
+
+          <article class="free-reading-result" aria-live="polite">
+            <p class="panel-label" data-text-zh="Your cards" data-text-en="Your cards">Your cards</p>
+            <div class="mini-card-row" id="miniCardRow">
+              <div class="mini-tarot-card"><span></span></div>
+              <div class="mini-tarot-card"><span></span></div>
+              <div class="mini-tarot-card"><span></span></div>
+            </div>
+            <div class="result-copy" id="resultCopy">
+              <h3 data-text-zh="准备好后，静心抽牌。" data-text-en="When you are ready, draw your cards.">准备好后，静心抽牌。</h3>
+              <p data-text-zh="你会看到一段简短解读。真正的个人咨询会结合你的背景、状态和具体选择来展开。" data-text-en="You will receive a short interpretation. A personal session reads with your context, timing, and real choices in mind.">
+                你会看到一段简短解读。真正的个人咨询会结合你的背景、状态和具体选择来展开。
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-band muted-band">
+        <div class="reading-split">
+          <div>
+            <p class="eyebrow" data-text-zh="How to use it" data-text-en="How to use it">How to use it</p>
+            <h2 data-text-zh="免费抽牌适合启发，不替代深度咨询。" data-text-en="The free draw is for reflection, not a full personal reading.">免费抽牌适合启发，不替代深度咨询。</h2>
+          </div>
+          <div class="bio-essay short">
+            <p data-text-zh="如果问题很复杂，建议把免费结果当作一个入口：它可以帮你发现现在最需要被看见的主题。" data-text-en="If your situation is complex, treat the free result as an opening: it can show which theme wants your attention first.">如果问题很复杂，建议把免费结果当作一个入口：它可以帮你发现现在最需要被看见的主题。</p>
+            <p data-text-zh="一对一咨询会更适合感情反复、事业选择、关系沟通、复合断联、长期卡住的状态。" data-text-en="A one-on-one session is better for repeated relationship stress, career decisions, communication, reconciliation, or long-term stuckness.">一对一咨询会更适合感情反复、事业选择、关系沟通、复合断联、长期卡住的状态。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="book-yoyo" class="page-cta free-reading-cta">
+        <p class="eyebrow" data-text-zh="Go deeper" data-text-en="Go deeper">Go deeper</p>
+        <h2 data-text-zh="想结合你的真实情况细看？预约 Yoyo 做完整解读。" data-text-en="Want to read the full situation? Book Yoyo for a personal session.">想结合你的真实情况细看？预约 Yoyo 做完整解读。</h2>
+        <p data-text-zh="点击获取微信号或直接发邮件。建议附上你的问题、关系/事业背景，以及想预约的时长。" data-text-en="Tap to reveal WeChat or send an email. Include your question, background, and the session length you prefer.">点击获取微信号或直接发邮件。建议附上你的问题、关系/事业背景，以及想预约的时长。</p>
+        <div class="booking-contact-options cta-contact-options">
+          <button class="booking-contact-card" type="button" data-free-wechat>
+            <span class="contact-kicker" data-text-zh="微信预约" data-text-en="WeChat booking">微信预约</span>
+            <strong data-text-zh="获取微信号" data-text-en="Reveal WeChat ID">获取微信号</strong>
+            <span data-text-zh="适合快速确认时间与服务。" data-text-en="Best for quick scheduling and service confirmation.">适合快速确认时间与服务。</span>
+            <span class="wechat-reveal" hidden>
+              <b>yoyoran</b>
+              <small data-text-zh="已显示微信号，并尝试复制。" data-text-en="WeChat ID is shown and copy was attempted.">已显示微信号，并尝试复制。</small>
+            </span>
+          </button>
+          <div class="booking-contact-card email-card">
+            <span class="contact-kicker" data-text-zh="邮件预约" data-text-en="Email booking">邮件预约</span>
+            <strong>yoyo.ranjing@gmail.com</strong>
+            <span data-text-zh="不方便使用微信时，可以直接发送邮件。" data-text-en="Prefer not to use WeChat? Send Yoyo an email directly.">不方便使用微信时，可以直接发送邮件。</span>
+            <div class="email-actions">
+              <a
+                class="button secondary email-action"
+                href="mailto:yoyo.ranjing@gmail.com?subject=AKIRA%20TAROT%20Reading%20Request&body=Hi%20Yoyo%2C%0A%0AI%20tried%20the%20free%20tarot%20reading%20and%20would%20like%20to%20book%20a%20personal%20session.%0A%0AQuestion%20focus%3A%0APreferred%20session%20length%3A%0APreferred%20time%3A%0A%0AThank%20you."
+                data-free-email="mail_app"
+              >
+                <span data-text-zh="邮件 App" data-text-en="Mail App">邮件 App</span>
+              </a>
+              <a
+                class="button secondary email-action"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=yoyo.ranjing%40gmail.com&su=AKIRA%20TAROT%20Reading%20Request&body=Hi%20Yoyo%2C%0A%0AI%20tried%20the%20free%20tarot%20reading%20and%20would%20like%20to%20book%20a%20personal%20session.%0A%0AQuestion%20focus%3A%0APreferred%20session%20length%3A%0APreferred%20time%3A%0A%0AThank%20you."
+                target="_blank"
+                rel="noopener"
+                data-free-email="gmail_web"
+              >
+                <span data-text-zh="Gmail 网页" data-text-en="Gmail Web">Gmail 网页</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>🔮 AKIRA TAROT 🌟 晶晶塔罗</p>
+      <div>
+        <a href="index.html#readings" data-text-zh="服务" data-text-en="Services">服务</a>
+        <a href="about.html" data-text-zh="关于" data-text-en="About">关于</a>
+        <a href="tarot-101.html" data-text-zh="塔罗101" data-text-en="Tarot 101">塔罗101</a>
+        <a href="index.html#booking" data-text-zh="预约" data-text-en="Book">预约</a>
+      </div>
+    </footer>
+
+    <script>
+      const readingCopy = {
+        zh: {
+          startNote: "请先写下你的问题，再抽牌。",
+          labels: ["主题", "现状", "阻碍", "建议"],
+          resultTitle: "这组牌给你的提示",
+          resultIntro: "围绕“{question}”，这次抽牌提醒你：",
+          resultClose: "如果你想看对方状态、时间线、隐藏影响或下一步策略，可以预约 Yoyo 做更完整的个人解读。",
+          topics: {
+            love: "感情",
+            career: "事业",
+            relationship: "关系",
+            choice: "选择",
+            healing: "疗愈",
+          },
+          cards: [
+            ["女祭司", "先不要急着追问结果，安静观察真实感受。你已经接收到一些信号，只是还需要一点空间确认。"],
+            ["恋人", "选择比答案更重要。关系、合作或方向都需要回到价值观是否一致，而不是只看眼前情绪。"],
+            ["星星", "希望正在恢复。现在适合做一个温柔但具体的小行动，让能量慢慢回到你身边。"],
+            ["圣杯二", "真诚回应会带来连接。把话说清楚，也给对方一点可以靠近的空间。"],
+            ["星币八", "回到练习、积累和稳定执行。答案会在持续行动里变得更清楚。"],
+            ["权杖皇后", "你的吸引力来自确认自己。越清楚想要什么，越不容易被外界节奏带走。"],
+            ["节制", "现在需要调和而不是用力推进。慢一点，给情绪、时间和沟通留出缓冲。"],
+            ["宝剑六", "离开旧循环就是进展。你可能还没完全抵达新岸，但方向已经开始改变。"],
+            ["太阳", "把事情放到光下。坦诚、直接、简单的表达，会比猜测更有力量。"],
+            ["月亮", "不确定感正在放大情绪。先分清事实和想象，再决定下一步。"],
+            ["世界", "一个阶段正在完成。你可以总结经验，然后用更成熟的方式进入下一轮。"],
+            ["力量", "温柔不是退让。稳定住自己，耐心和边界会同时保护你。"],
+          ],
+        },
+        en: {
+          startNote: "Write your question first, then draw your cards.",
+          labels: ["Theme", "Current", "Block", "Advice"],
+          resultTitle: "Your card message",
+          resultIntro: "Around “{question}”, this draw suggests:",
+          resultClose: "If you want to read the other person's state, timing, hidden influences, or next-step strategy, book Yoyo for a fuller personal reading.",
+          topics: {
+            love: "Love",
+            career: "Career",
+            relationship: "Relationship",
+            choice: "Decision",
+            healing: "Healing",
+          },
+          cards: [
+            ["The High Priestess", "Do not rush the outcome. Quietly observe what you already feel; the signal is present, but it needs space to become clear."],
+            ["The Lovers", "Choice matters more than a quick answer. Return to shared values, not only the emotion of the moment."],
+            ["The Star", "Hope is returning. Choose one gentle, practical action that helps your energy come back to you."],
+            ["Two of Cups", "Honest response creates connection. Say the thing clearly, while leaving room for softness."],
+            ["Eight of Pentacles", "Return to practice and steady effort. The answer becomes clearer through consistent action."],
+            ["Queen of Wands", "Your magnetism comes from self-certainty. The clearer you are, the less outside noise can pull you around."],
+            ["Temperance", "This asks for balance, not force. Slow down and give emotion, timing, and communication room to settle."],
+            ["Six of Swords", "Leaving an old loop is progress. You may not be fully on the new shore yet, but the direction is changing."],
+            ["The Sun", "Bring the matter into the light. Clear, direct, simple expression has more power than guessing."],
+            ["The Moon", "Uncertainty may be amplifying emotion. Separate facts from imagination before choosing your next move."],
+            ["The World", "A phase is completing. Gather the lesson, then enter the next chapter with more maturity."],
+            ["Strength", "Softness is not surrender. Steady yourself; patience and boundaries can protect you together."],
+          ],
+        },
+      };
+
+      let currentLang = "zh";
+      let hasStarted = false;
+      const languageButtons = document.querySelectorAll(".language-option");
+      const form = document.querySelector("#freeReadingForm");
+      const question = document.querySelector("#readingQuestion");
+      const note = document.querySelector("#readingFormNote");
+      const miniCardRow = document.querySelector("#miniCardRow");
+      const resultCopy = document.querySelector("#resultCopy");
+
+      function trackEvent(name, params = {}) {
+        if (typeof window.gtag !== "function") return;
+        window.gtag("event", name, {
+          language: currentLang,
+          page_path: window.location.pathname,
+          ...params,
+        });
+      }
+
+      function setLanguage(lang) {
+        currentLang = lang;
+        document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
+        document.querySelectorAll("[data-text-zh]").forEach((node) => {
+          node.textContent = node.dataset[`text${lang === "zh" ? "Zh" : "En"}`];
+        });
+        document.querySelectorAll("[data-placeholder-zh]").forEach((node) => {
+          node.placeholder = node.dataset[`placeholder${lang === "zh" ? "Zh" : "En"}`];
+        });
+        languageButtons.forEach((button) => {
+          const active = button.dataset.lang === lang;
+          button.classList.toggle("active", active);
+          button.setAttribute("aria-pressed", String(active));
+        });
+      }
+
+      function selectedValue(name) {
+        return new FormData(form).get(name);
+      }
+
+      function startReading() {
+        if (hasStarted) return;
+        hasStarted = true;
+        trackEvent("free_reading_start", {
+          cta_location: "free_reading_tool",
+        });
+      }
+
+      function sampleCards(count) {
+        const pool = readingCopy[currentLang].cards.map((card, index) => ({ card, index }));
+        const selected = [];
+        while (selected.length < count && pool.length) {
+          const pick = Math.floor(Math.random() * pool.length);
+          selected.push(pool.splice(pick, 1)[0]);
+        }
+        return selected;
+      }
+
+      function renderResult(cards, spread, topic, questionText) {
+        const copy = readingCopy[currentLang];
+        const labels = spread === 1 ? [copy.labels[0]] : copy.labels.slice(1);
+        miniCardRow.innerHTML = cards.map(({ card }, index) => `
+          <div class="mini-tarot-card revealed">
+            <span>${labels[index]}</span>
+            <strong>${card[0]}</strong>
+          </div>
+        `).join("");
+        resultCopy.innerHTML = `
+          <h3>${copy.resultTitle}</h3>
+          <p>${copy.resultIntro.replace("{question}", questionText)}</p>
+          <div class="result-message-list">
+            ${cards.map(({ card }, index) => `
+              <article>
+                <span>${labels[index]}</span>
+                <strong>${card[0]}</strong>
+                <p>${card[1]}</p>
+              </article>
+            `).join("")}
+          </div>
+          <p>${copy.resultClose}</p>
+          <a class="button primary" href="#book-yoyo">
+            <span class="icon calendar" aria-hidden="true"></span>
+            <span>${currentLang === "zh" ? "预约 Yoyo 细看" : "Book Yoyo for more"}</span>
+          </a>
+        `;
+        trackEvent("free_reading_result_view", {
+          topic,
+          topic_label: copy.topics[topic],
+          spread_size: spread,
+          card_names: cards.map(({ card }) => card[0]).join(", "),
+        });
+      }
+
+      languageButtons.forEach((button) => {
+        button.addEventListener("click", () => setLanguage(button.dataset.lang));
+      });
+
+      form.addEventListener("input", startReading);
+      form.addEventListener("change", startReading);
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        startReading();
+        const questionText = question.value.trim();
+        if (!questionText) {
+          note.textContent = readingCopy[currentLang].startNote;
+          question.focus();
+          return;
+        }
+        note.textContent = "";
+        const spread = Number(selectedValue("spread"));
+        const topic = selectedValue("topic");
+        const cards = sampleCards(spread);
+        trackEvent("free_reading_card_draw", {
+          topic,
+          topic_label: readingCopy[currentLang].topics[topic],
+          spread_size: spread,
+          card_names: cards.map(({ card }) => card[0]).join(", "),
+        });
+        renderResult(cards, spread, topic, questionText);
+      });
+
+      document.querySelector("[data-free-wechat]").addEventListener("click", async (event) => {
+        const button = event.currentTarget;
+        const reveal = button.querySelector(".wechat-reveal");
+        if (reveal) reveal.hidden = false;
+        trackEvent("click_wechat_booking", {
+          cta_location: "free_reading_result",
+          action_type: "reveal_wechat_id",
+        });
+        try {
+          await navigator.clipboard.writeText("yoyoran");
+          trackEvent("copy_wechat_id", {
+            cta_location: "free_reading_result",
+            copy_status: "success",
+          });
+        } catch {
+          trackEvent("copy_wechat_id", {
+            cta_location: "free_reading_result",
+            copy_status: "manual",
+          });
+        }
+      });
+
+      document.querySelectorAll("[data-free-email]").forEach((link) => {
+        link.addEventListener("click", () => {
+          trackEvent("click_email_booking", {
+            cta_location: "free_reading_result",
+            method: link.dataset.freeEmail,
+            email: "yoyo.ranjing@gmail.com",
+          });
+        });
+      });
+
+      setLanguage("zh");
+    </script>
+  </body>
+</html>
