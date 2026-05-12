@@ -573,7 +573,7 @@ document.querySelectorAll('a[href="#booking"]').forEach((link) => {
   if (link.dataset.serviceKey) return;
   link.addEventListener("click", () => {
     trackEvent("click_wechat_booking", {
-      source: "homepage_booking_link",
+      cta_location: "homepage_booking_link",
       link_text: link.textContent.trim(),
     });
   });
@@ -582,7 +582,7 @@ document.querySelectorAll('a[href="#booking"]').forEach((link) => {
 document.querySelectorAll("[data-email-booking]").forEach((link) => {
   link.addEventListener("click", () => {
     trackEvent("click_email_booking", {
-      source: "homepage_booking",
+      cta_location: "homepage_booking",
       method: link.dataset.emailBooking,
       email: "yoyo.ranjing@gmail.com",
     });
@@ -594,18 +594,18 @@ document.querySelectorAll("[data-wechat-booking]").forEach((button) => {
     const reveal = button.querySelector(".wechat-reveal");
     if (reveal) reveal.hidden = false;
     trackEvent("click_wechat_booking", {
-      source: button.dataset.wechatBooking,
+      cta_location: button.dataset.wechatBooking,
       action_type: "reveal_wechat_id",
     });
     try {
       await navigator.clipboard.writeText("yoyoran");
       trackEvent("copy_wechat_id", {
-        source: button.dataset.wechatBooking,
+        cta_location: button.dataset.wechatBooking,
         copy_status: "success",
       });
     } catch {
       trackEvent("copy_wechat_id", {
-        source: button.dataset.wechatBooking,
+        cta_location: button.dataset.wechatBooking,
         copy_status: "manual",
       });
     }

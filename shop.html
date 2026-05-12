@@ -392,14 +392,14 @@
           shopWechatValue.textContent = "yoyoran";
           shopNote.textContent = t("copyDone");
           trackEvent("copy_wechat_id", {
-            source: "shop_copy_wechat",
+            cta_location: "shop_copy_wechat",
             copy_status: "success",
           });
         } catch {
           shopWechatValue.textContent = "yoyoran";
           shopNote.textContent = t("copyFallback");
           trackEvent("copy_wechat_id", {
-            source: "shop_copy_wechat_fallback",
+            cta_location: "shop_copy_wechat_fallback",
             copy_status: "manual",
           });
         }

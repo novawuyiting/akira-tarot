@@ -366,7 +366,7 @@
       document.querySelectorAll('a[href*="index.html#booking"]').forEach((link) => {
         link.addEventListener("click", () => {
           trackEvent("click_wechat_booking", {
-            source: "love_tarot_reading",
+            cta_location: "love_tarot_reading",
             link_text: link.textContent.trim(),
           });
         });

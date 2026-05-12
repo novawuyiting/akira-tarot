@@ -275,7 +275,7 @@
       document.querySelectorAll('a[href*="index.html#booking"]').forEach((link) => {
         link.addEventListener("click", () => {
           trackEvent("click_wechat_booking", {
-            source: "about_yoyo",
+            cta_location: "about_yoyo",
             link_text: link.textContent.trim(),
           });
         });
