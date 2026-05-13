@@ -3101,3 +3101,410 @@ body.home-page {
     flex: 1 1 auto;
   }
 }
+
+/* Tarot 101 + Shop UI refresh V1: match homepage/about system */
+.tarot-101-page,
+.shop-page {
+  color-scheme: dark;
+  --dark-font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  --paper: #050207;
+  --surface: #fff7ff;
+  --ink: #fff7ff;
+  --soft-ink: #cdbfd4;
+  --muted: #9f8aa9;
+  --line: rgba(255, 255, 255, 0.13);
+  --rose: #ff4fb8;
+  --pink: #ff4fb8;
+  --lilac: #8b5cf6;
+  --plum: #120816;
+  --deep-plum: #050207;
+  --tea: #c4a7e7;
+  --gold: #ff4fb8;
+  --charcoal: #050207;
+  --shadow: 0 28px 80px rgba(0, 0, 0, 0.34);
+  background:
+    radial-gradient(circle at 12% 10%, rgba(255, 79, 184, 0.16), transparent 28%),
+    radial-gradient(circle at 88% 18%, rgba(124, 58, 237, 0.2), transparent 30%),
+    linear-gradient(180deg, #050207 0%, #0d0613 42%, #050207 100%);
+  color: var(--surface);
+  font-family: var(--dark-font);
+  line-height: 1.55;
+}
+
+.tarot-101-page h1,
+.tarot-101-page h2,
+.tarot-101-page h3,
+.tarot-101-page p,
+.tarot-101-page a,
+.tarot-101-page button,
+.tarot-101-page span,
+.tarot-101-page strong,
+.tarot-101-page li,
+.tarot-101-page footer p,
+.shop-page h1,
+.shop-page h2,
+.shop-page h3,
+.shop-page p,
+.shop-page a,
+.shop-page button,
+.shop-page span,
+.shop-page strong,
+.shop-page li,
+.shop-page footer p {
+  font-family: var(--dark-font);
+}
+
+.tarot-101-page .site-header,
+.shop-page .site-header {
+  position: fixed;
+  top: 16px;
+  right: auto;
+  left: 50%;
+  width: min(1180px, calc(100% - 32px));
+  min-height: 72px;
+  padding: 12px 14px 12px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  background: rgba(5, 2, 7, 0.78);
+  color: #fff7ff;
+  box-shadow: 0 18px 70px rgba(0, 0, 0, 0.28);
+  transform: translateX(-50%);
+}
+
+.tarot-101-page .brand,
+.shop-page .brand {
+  letter-spacing: 0;
+}
+
+.tarot-101-page .brand-mark,
+.shop-page .brand-mark {
+  width: 18px;
+  height: 18px;
+  border: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--pink), var(--lilac));
+  box-shadow: 0 0 24px rgba(255, 79, 184, 0.45);
+}
+
+.tarot-101-page nav,
+.shop-page nav {
+  color: rgba(255, 247, 255, 0.78);
+}
+
+.tarot-101-page nav a:hover,
+.shop-page nav a:hover {
+  color: #ffffff;
+}
+
+.tarot-101-page .language-toggle,
+.shop-page .language-toggle {
+  border-color: rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.tarot-101-page .language-option,
+.shop-page .language-option {
+  color: rgba(255, 247, 255, 0.78);
+}
+
+.tarot-101-page .language-option.active,
+.shop-page .language-option.active {
+  background: var(--pink);
+  color: #050207;
+  font-weight: 850;
+}
+
+.tarot-101-page .subpage-hero,
+.shop-page .subpage-hero {
+  min-height: 88vh;
+  align-content: center;
+  padding: 132px max(clamp(20px, 7vw, 96px), calc((100vw - 1180px) / 2)) 72px;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.17), transparent 28%),
+    #050207;
+  color: #fff7ff;
+}
+
+.tarot-101-page .breadcrumb,
+.shop-page .breadcrumb {
+  color: rgba(255, 247, 255, 0.62);
+}
+
+.tarot-101-page .eyebrow,
+.tarot-101-page .panel-label,
+.shop-page .eyebrow,
+.shop-page .panel-label,
+.shop-page .shop-card > p:first-of-type {
+  color: var(--pink);
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.14em;
+  line-height: 1.25;
+}
+
+.tarot-101-page h1,
+.shop-page h1 {
+  max-width: 11.5ch;
+  font-size: clamp(4.1rem, 8vw, 7.6rem);
+  font-weight: 900;
+  line-height: 0.94;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.tarot-101-page h2,
+.shop-page h2 {
+  max-width: 920px;
+  color: #fff7ff;
+  font-size: clamp(2.25rem, 5vw, 4.25rem);
+  font-weight: 850;
+  line-height: 1.04;
+}
+
+.tarot-101-page h3,
+.shop-page h3 {
+  color: #fff7ff;
+  font-weight: 850;
+  line-height: 1.12;
+}
+
+.tarot-101-page .subpage-hero > p:last-of-type,
+.shop-page .subpage-hero > p:last-of-type {
+  max-width: 38rem;
+  color: rgba(255, 247, 255, 0.78);
+  font-size: clamp(1.05rem, 1.7vw, 1.24rem);
+  line-height: 1.72;
+}
+
+.tarot-101-page .button,
+.shop-page .button {
+  min-height: 48px;
+  border-color: rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  padding: 0 22px;
+  font-weight: 850;
+  line-height: 1.08;
+}
+
+.tarot-101-page .button.primary,
+.tarot-101-page .subpage-hero .button.primary,
+.shop-page .button.primary,
+.shop-page .subpage-hero .button.primary {
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--pink), var(--lilac));
+  color: #050207;
+  box-shadow: 0 18px 44px rgba(255, 79, 184, 0.24);
+}
+
+.tarot-101-page .button.secondary,
+.tarot-101-page .subpage-hero .button.secondary,
+.tarot-101-page .page-cta .button.secondary,
+.shop-page .button.secondary,
+.shop-page .subpage-hero .button.secondary,
+.shop-page .button.ghost {
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.045);
+  color: #fff7ff;
+}
+
+.tarot-101-page .button:hover,
+.shop-page .button:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 79, 184, 0.72);
+}
+
+.tarot-101-page .content-band,
+.tarot-101-page .content-band.muted-band,
+.tarot-101-page .page-cta,
+.shop-page .content-band,
+.shop-page .content-band.muted-band,
+.shop-page .page-cta {
+  padding: clamp(74px, 8vw, 112px) max(clamp(20px, 7vw, 96px), calc((100vw - 1180px) / 2));
+  background: transparent;
+}
+
+.tarot-101-page .section-intro,
+.shop-page .section-intro {
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: minmax(150px, 0.42fr) minmax(0, 1fr);
+  gap: 32px;
+  align-items: end;
+  margin-bottom: 34px;
+}
+
+.tarot-101-page .concept-grid,
+.tarot-101-page .faq-grid,
+.tarot-101-page .spread-demo,
+.shop-page .timeline-list,
+.shop-page .shop-card-grid {
+  gap: 18px;
+}
+
+.tarot-101-page .concept-grid article,
+.tarot-101-page .faq-grid article,
+.tarot-101-page .spread-demo article,
+.tarot-101-page .fact-list p,
+.shop-page .timeline-list article,
+.shop-page .shop-card,
+.shop-page .order-panel,
+.shop-page .wechat-card {
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 8px;
+  background: rgba(18, 8, 22, 0.82);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+}
+
+.tarot-101-page .concept-grid span,
+.tarot-101-page .spread-demo span,
+.shop-page .timeline-list span,
+.shop-page .shop-card strong,
+.shop-page .wechat-card span {
+  color: var(--pink);
+}
+
+.tarot-101-page .concept-grid p,
+.tarot-101-page .faq-grid p,
+.tarot-101-page .spread-demo p,
+.tarot-101-page .fact-list p,
+.tarot-101-page .page-cta p:not(.eyebrow),
+.shop-page .timeline-list p,
+.shop-page .shop-card p:not(:first-of-type),
+.shop-page .order-panel li,
+.shop-page .form-note {
+  color: var(--soft-ink);
+  line-height: 1.72;
+}
+
+.tarot-101-page .spread-demo article::after {
+  border-color: rgba(255, 79, 184, 0.42);
+  background: linear-gradient(145deg, rgba(255, 79, 184, 0.18), rgba(124, 58, 237, 0.2));
+}
+
+.tarot-101-page .page-cta,
+.shop-page footer,
+.tarot-101-page footer {
+  background: #050207;
+  border-top: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.shop-page .shop-card {
+  min-height: 0;
+}
+
+.shop-page .shop-card-art {
+  border-color: rgba(255, 255, 255, 0.13);
+  border-radius: 6px;
+  background: #120816;
+}
+
+.shop-page .shop-card-art img {
+  filter: saturate(0.98) contrast(1.04);
+}
+
+.shop-page .shop-select.selected {
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--pink), var(--lilac));
+  color: #050207;
+}
+
+.shop-page .order-panel {
+  background:
+    radial-gradient(circle at 88% 12%, rgba(255, 79, 184, 0.16), transparent 28%),
+    rgba(18, 8, 22, 0.92);
+}
+
+.shop-page .order-panel h3,
+.shop-page .wechat-card strong {
+  color: #fff7ff;
+}
+
+.shop-page .wechat-card {
+  background: rgba(255, 255, 255, 0.045);
+}
+
+@media (max-width: 900px) {
+  .tarot-101-page .site-header,
+  .shop-page .site-header {
+    position: absolute;
+    align-items: flex-start;
+  }
+
+  .tarot-101-page .section-intro,
+  .tarot-101-page .concept-grid,
+  .tarot-101-page .faq-grid,
+  .tarot-101-page .spread-demo,
+  .shop-page .section-intro,
+  .shop-page .shop-page-layout,
+  .shop-page .timeline-list {
+    grid-template-columns: 1fr;
+  }
+
+  .tarot-101-page .subpage-hero,
+  .shop-page .subpage-hero {
+    min-height: auto;
+    padding-top: 150px;
+  }
+
+  .shop-page .order-panel {
+    position: static;
+  }
+}
+
+@media (max-width: 620px) {
+  .tarot-101-page .site-header,
+  .shop-page .site-header {
+    width: calc(100% - 20px);
+  }
+
+  .tarot-101-page nav,
+  .shop-page nav {
+    display: none;
+  }
+
+  .tarot-101-page h1,
+  .shop-page h1 {
+    font-size: clamp(3rem, 14vw, 4.65rem);
+    line-height: 0.94;
+  }
+
+  .tarot-101-page h2,
+  .shop-page h2 {
+    line-height: 1.08;
+  }
+
+  .tarot-101-page .subpage-hero,
+  .shop-page .subpage-hero {
+    padding-inline: 18px;
+  }
+
+  .tarot-101-page .subpage-hero .breadcrumb,
+  .shop-page .subpage-hero .breadcrumb {
+    margin-top: 82px;
+  }
+
+  .tarot-101-page .content-band,
+  .tarot-101-page .content-band.muted-band,
+  .tarot-101-page .page-cta,
+  .shop-page .content-band,
+  .shop-page .content-band.muted-band {
+    padding-inline: 18px;
+  }
+
+  .tarot-101-page .subpage-hero > p:last-of-type,
+  .tarot-101-page .concept-grid p,
+  .tarot-101-page .faq-grid p,
+  .tarot-101-page .spread-demo p,
+  .tarot-101-page .fact-list p,
+  .shop-page .subpage-hero > p:last-of-type,
+  .shop-page .timeline-list p,
+  .shop-page .shop-card p:not(:first-of-type),
+  .shop-page .order-panel li {
+    line-height: 1.78;
+  }
+
+  .tarot-101-page .hero-actions .button,
+  .shop-page .hero-actions .button {
+    flex: 1 1 auto;
+  }
+}
